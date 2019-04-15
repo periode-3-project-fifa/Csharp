@@ -1,0 +1,10 @@
+C:\Users\Bas\OneDrive - ROC West-Brabant\Radius College\Periode_04\PR\Fifa\Visualstudio\FifaBet\FifaBet\bin\Debug\FifaBet.exe.config
+C:\Users\Bas\OneDrive - ROC West-Brabant\Radius College\Periode_04\PR\Fifa\Visualstudio\FifaBet\FifaBet\bin\Debug\FifaBet.exe
+C:\Users\Bas\OneDrive - ROC West-Brabant\Radius College\Periode_04\PR\Fifa\Visualstudio\FifaBet\FifaBet\bin\Debug\FifaBet.pdb
+C:\Users\Bas\OneDrive - ROC West-Brabant\Radius College\Periode_04\PR\Fifa\Visualstudio\FifaBet\FifaBet\obj\Debug\FifaBet.csprojAssemblyReference.cache
+C:\Users\Bas\OneDrive - ROC West-Brabant\Radius College\Periode_04\PR\Fifa\Visualstudio\FifaBet\FifaBet\obj\Debug\FifaBet.MainForm.resources
+C:\Users\Bas\OneDrive - ROC West-Brabant\Radius College\Periode_04\PR\Fifa\Visualstudio\FifaBet\FifaBet\obj\Debug\FifaBet.Properties.Resources.resources
+C:\Users\Bas\OneDrive - ROC West-Brabant\Radius College\Periode_04\PR\Fifa\Visualstudio\FifaBet\FifaBet\obj\Debug\FifaBet.csproj.GenerateResource.cache
+C:\Users\Bas\OneDrive - ROC West-Brabant\Radius College\Periode_04\PR\Fifa\Visualstudio\FifaBet\FifaBet\obj\Debug\FifaBet.csproj.CoreCompileInputs.cache
+C:\Users\Bas\OneDrive - ROC West-Brabant\Radius College\Periode_04\PR\Fifa\Visualstudio\FifaBet\FifaBet\obj\Debug\FifaBet.exe
+C:\Users\Bas\OneDrive - ROC West-Brabant\Radius College\Periode_04\PR\Fifa\Visualstudio\FifaBet\FifaBet\obj\Debug\FifaBet.pdb
