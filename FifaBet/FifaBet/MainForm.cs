@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Newtonsoft.Json;
 
 namespace FifaBet
 {
@@ -15,6 +16,11 @@ namespace FifaBet
         public MainForm()
         {
             InitializeComponent();
+        }
+
+        private void comboBoxGames_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }
