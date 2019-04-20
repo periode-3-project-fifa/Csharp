@@ -20,7 +20,14 @@ namespace FifaBet
 
         private void comboBoxGames_SelectedIndexChanged(object sender, EventArgs e)
         {
+            try
+            {
 
+            }
+            catch
+            {
+                MessageBox.Show("Er is iets misgegaan");
+            }
         }
     }
 }
