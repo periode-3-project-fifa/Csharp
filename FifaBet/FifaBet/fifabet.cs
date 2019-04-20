@@ -10,5 +10,10 @@ namespace FifaBet
     class fifabet
     {
         public string name { get; set; }
+
+        public override string ToString()
+        {
+            return base.ToString();
+        }
     }
 }

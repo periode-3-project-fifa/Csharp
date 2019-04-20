@@ -18,3 +18,7 @@ C:\xampp\htdocs\Project fifa\C#\FifaBet\FifaBet\obj\Debug\FifaBet.csproj.Generat
 C:\xampp\htdocs\Project fifa\C#\FifaBet\FifaBet\obj\Debug\FifaBet.csproj.CoreCompileInputs.cache
 C:\xampp\htdocs\Project fifa\C#\FifaBet\FifaBet\obj\Debug\FifaBet.exe
 C:\xampp\htdocs\Project fifa\C#\FifaBet\FifaBet\obj\Debug\FifaBet.pdb
+C:\xampp\htdocs\Project fifa\C#\FifaBet\FifaBet\bin\Debug\Newtonsoft.Json.dll
+C:\xampp\htdocs\Project fifa\C#\FifaBet\FifaBet\bin\Debug\Newtonsoft.Json.pdb
+C:\xampp\htdocs\Project fifa\C#\FifaBet\FifaBet\bin\Debug\Newtonsoft.Json.xml
+C:\xampp\htdocs\Project fifa\C#\FifaBet\FifaBet\obj\Debug\FifaBet.csproj.CopyComplete
