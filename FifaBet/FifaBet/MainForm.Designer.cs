@@ -42,7 +42,6 @@
             this.labelTeamTwo = new System.Windows.Forms.Label();
             this.groupBoxRightScore = new System.Windows.Forms.GroupBox();
             this.buttonBet = new System.Windows.Forms.Button();
-            this.saldoCredits = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDownBet)).BeginInit();
             this.groupBoxBetTeam.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).BeginInit();
@@ -54,7 +53,7 @@
             // 
             this.labelCredits.AutoSize = true;
             this.labelCredits.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelCredits.Location = new System.Drawing.Point(312, 8);
+            this.labelCredits.Location = new System.Drawing.Point(358, 9);
             this.labelCredits.Name = "labelCredits";
             this.labelCredits.Size = new System.Drawing.Size(59, 20);
             this.labelCredits.TabIndex = 0;
@@ -182,21 +181,11 @@
             this.buttonBet.Text = "Inzetten";
             this.buttonBet.UseVisualStyleBackColor = true;
             // 
-            // saldoCredits
-            // 
-            this.saldoCredits.AutoSize = true;
-            this.saldoCredits.Location = new System.Drawing.Point(377, 15);
-            this.saldoCredits.Name = "saldoCredits";
-            this.saldoCredits.Size = new System.Drawing.Size(35, 13);
-            this.saldoCredits.TabIndex = 14;
-            this.saldoCredits.Text = "label2";
-            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(424, 550);
-            this.Controls.Add(this.saldoCredits);
             this.Controls.Add(this.buttonBet);
             this.Controls.Add(this.groupBoxRightScore);
             this.Controls.Add(this.groupBoxBetTeam);
@@ -207,6 +196,7 @@
             this.Controls.Add(this.labelCredits);
             this.Name = "MainForm";
             this.Text = "BetForm";
+            this.Load += new System.EventHandler(this.MainForm_Load);
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDownBet)).EndInit();
             this.groupBoxBetTeam.ResumeLayout(false);
             this.groupBoxBetTeam.PerformLayout();
@@ -235,7 +225,6 @@
         private System.Windows.Forms.Label labelTeamTwo;
         private System.Windows.Forms.GroupBox groupBoxRightScore;
         private System.Windows.Forms.Button buttonBet;
-        private System.Windows.Forms.Label saldoCredits;
     }
 }
 

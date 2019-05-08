@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Newtonsoft.Json;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -7,8 +8,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using Newtonsoft.Json;
-using System.Net;
+
 
 namespace FifaBet
 {
@@ -22,18 +22,29 @@ namespace FifaBet
 
         private void comboBoxGames_SelectedIndexChanged(object sender, EventArgs e)
         {
-            WebClient client = new WebClient();
-            string json = client.DownloadString("http://localhost/Project%20fifa/PHP/PHP/api.php");
-            fifabet teams = JsonConvert.DeserializeObject<fifabet>(json);
- 
+            System.Net.WebClient downloader = new System.Net.WebClient();
+            string fifaJson;
+            
             try
             {
+                fifaJson = downloader.DownloadString("http://localhost/Project%20fifa/PHP/PHP/api.php");
+                List<fifateam> teams = JsonConvert.DeserializeObject<List<fifateam>>(fifaJson);
+
+                foreach(fifateam team in teams)
+                {
+                    comboBoxGames.Items.Add(team.name);
+                }
                 
             }
-            catch
+            catch (System.Net.WebException)
             {
-                MessageBox.Show("Er is iets misgegaan");
+                MessageBox.Show("er is iets misgegaan");
             }
+        }
+
+        private void MainForm_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }

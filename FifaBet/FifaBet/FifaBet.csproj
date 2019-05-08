@@ -49,7 +49,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="fifabet.cs" />
+    <Compile Include="fifateam.cs" />
     <Compile Include="MainForm.cs">
       <SubType>Form</SubType>
     </Compile>
