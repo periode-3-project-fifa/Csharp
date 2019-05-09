@@ -32,7 +32,7 @@ namespace FifaBet
 
                 foreach(fifateam team in teams)
                 {
-                    comboBoxGames.Items.Add(team.name);
+                    comboBoxGames.Items.Add(team);
                 }
                 
             }
