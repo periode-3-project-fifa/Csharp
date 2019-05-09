@@ -66,7 +66,6 @@
             this.comboBoxGames.Name = "comboBoxGames";
             this.comboBoxGames.Size = new System.Drawing.Size(191, 21);
             this.comboBoxGames.TabIndex = 1;
-            this.comboBoxGames.SelectedIndexChanged += new System.EventHandler(this.comboBoxGames_SelectedIndexChanged);
             // 
             // label1
             // 

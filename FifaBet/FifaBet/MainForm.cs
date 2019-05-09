@@ -17,34 +17,29 @@ namespace FifaBet
         public MainForm()
         {
             InitializeComponent();
-            comboBoxGames_SelectedIndexChanged(null, null);
         }
 
-        private void comboBoxGames_SelectedIndexChanged(object sender, EventArgs e)
+        private void MainForm_Load(object sender, EventArgs e)
         {
             System.Net.WebClient downloader = new System.Net.WebClient();
             string fifaJson;
-            
+
             try
             {
                 fifaJson = downloader.DownloadString("http://localhost/Project%20fifa/PHP/PHP/api.php");
                 List<fifateam> teams = JsonConvert.DeserializeObject<List<fifateam>>(fifaJson);
 
-                foreach(fifateam team in teams)
+
+                foreach (fifateam team in teams)
                 {
                     comboBoxGames.Items.Add(team);
                 }
-                
+
             }
             catch (System.Net.WebException)
             {
                 MessageBox.Show("er is iets misgegaan");
             }
-        }
-
-        private void MainForm_Load(object sender, EventArgs e)
-        {
-
         }
     }
 }
