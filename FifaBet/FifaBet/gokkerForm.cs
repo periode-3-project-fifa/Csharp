@@ -12,14 +12,20 @@ namespace FifaBet
 {
     public partial class gokkerCreateForm : Form
     {
+        public string naam;
+
         public gokkerCreateForm()
         {
             InitializeComponent();
         }
 
-        private void gokkerCreateForm_Load(object sender, EventArgs e)
+        private void createNewUser_Click(object sender, EventArgs e)
         {
+            naam = nameTextBox.Text;
 
+            MessageBox.Show("Welkom" + " " + naam);
+
+            this.Close();
         }
     }
 }

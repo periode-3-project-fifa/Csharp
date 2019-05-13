@@ -16,7 +16,7 @@ namespace FifaBet
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new gokkerCreateForm());
+            Application.Run(new MainForm());
         }
     }
 }

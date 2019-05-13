@@ -69,6 +69,12 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Bet.cs" />
+    <Compile Include="cheatCodeForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="cheatCodeForm.Designer.cs">
+      <DependentUpon>cheatCodeForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="fifateam.cs" />
     <Compile Include="gokkerForm.cs">
       <SubType>Form</SubType>
@@ -85,6 +91,9 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="cheatCodeForm.resx">
+      <DependentUpon>cheatCodeForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="gokkerForm.resx">
       <DependentUpon>gokkerForm.cs</DependentUpon>
     </EmbeddedResource>

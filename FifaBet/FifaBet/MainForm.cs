@@ -26,6 +26,10 @@ namespace FifaBet
 
         private void MainForm_Load(object sender, EventArgs e)
         {
+            gokkerCreateForm newProfiel = new gokkerCreateForm();
+            newProfiel.ShowDialog();
+            nameLabel.Text = newProfiel.naam;
+
             System.Net.WebClient downloader = new System.Net.WebClient();
             string fifaJson;
 
@@ -50,6 +54,20 @@ namespace FifaBet
         private void UpdateBalanceLabel()
         {
             balanceLabel.Text = balance.ToString(); //Update de label.
+        }
+
+        private void nameLabel_DoubleClick(object sender, EventArgs e)
+        {
+            //Deze code actieveer de cheatcode!
+            if( balance == 0)
+            {
+                cheatCodeForm cheatcode = new cheatCodeForm();
+                cheatcode.ShowDialog();
+            }
+            else
+            {
+                MessageBox.Show("Je hebt nog genoeg geld!");
+            }
         }
     }
 }

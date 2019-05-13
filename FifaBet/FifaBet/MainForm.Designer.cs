@@ -43,6 +43,8 @@
             this.groupBoxRightScore = new System.Windows.Forms.GroupBox();
             this.buttonBet = new System.Windows.Forms.Button();
             this.balanceLabel = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
+            this.nameLabel = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDownBet)).BeginInit();
             this.groupBoxBetTeam.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).BeginInit();
@@ -191,11 +193,34 @@
             this.balanceLabel.TabIndex = 14;
             this.balanceLabel.Text = "label2";
             // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Location = new System.Drawing.Point(13, 13);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(68, 16);
+            this.label2.TabIndex = 15;
+            this.label2.Text = "Welkom:";
+            // 
+            // nameLabel
+            // 
+            this.nameLabel.AutoSize = true;
+            this.nameLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.nameLabel.Location = new System.Drawing.Point(78, 14);
+            this.nameLabel.Name = "nameLabel";
+            this.nameLabel.Size = new System.Drawing.Size(47, 15);
+            this.nameLabel.TabIndex = 16;
+            this.nameLabel.Text = "label3";
+            this.nameLabel.DoubleClick += new System.EventHandler(this.nameLabel_DoubleClick);
+            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(424, 550);
+            this.Controls.Add(this.nameLabel);
+            this.Controls.Add(this.label2);
             this.Controls.Add(this.balanceLabel);
             this.Controls.Add(this.buttonBet);
             this.Controls.Add(this.groupBoxRightScore);
@@ -237,6 +262,8 @@
         private System.Windows.Forms.GroupBox groupBoxRightScore;
         private System.Windows.Forms.Button buttonBet;
         private System.Windows.Forms.Label balanceLabel;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label nameLabel;
     }
 }
 
