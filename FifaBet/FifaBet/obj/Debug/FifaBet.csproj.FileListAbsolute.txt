@@ -50,3 +50,4 @@ C:\xampp\htdocs\Project fifa\C#\FifaBet\FifaBet\obj\Debug\FifaBet.csproj.CoreCom
 C:\xampp\htdocs\Project fifa\C#\FifaBet\FifaBet\obj\Debug\FifaBet.csproj.CopyComplete
 C:\xampp\htdocs\Project fifa\C#\FifaBet\FifaBet\obj\Debug\FifaBet.exe
 C:\xampp\htdocs\Project fifa\C#\FifaBet\FifaBet\obj\Debug\FifaBet.pdb
+C:\xampp\htdocs\Project fifa\C#\FifaBet\FifaBet\obj\Debug\FifaBet.gokkerCreateForm.resources
