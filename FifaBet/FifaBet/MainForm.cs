@@ -35,7 +35,7 @@ namespace FifaBet
 
             try
             {
-                fifaJson = downloader.DownloadString("http://localhost/Proj_fifa/PHP/PHP/api.php");
+                fifaJson = downloader.DownloadString("http://localhost/Project%20fifa/PHP/PHP/api.php");
                 List<fifateam> teams = JsonConvert.DeserializeObject<List<fifateam>>(fifaJson);
 
 

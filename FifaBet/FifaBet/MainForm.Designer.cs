@@ -42,14 +42,10 @@
             this.balanceLabel = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.nameLabel = new System.Windows.Forms.Label();
-            this.groupBoxBetTeam = new System.Windows.Forms.GroupBox();
-            this.radioButtonTeamOneWinner = new System.Windows.Forms.RadioButton();
-            this.radioButtonTeamTwoWinner = new System.Windows.Forms.RadioButton();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDownBet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown2)).BeginInit();
             this.groupBoxRightScore.SuspendLayout();
-            this.groupBoxBetTeam.SuspendLayout();
             this.SuspendLayout();
             // 
             // labelCredits
@@ -188,13 +184,11 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(424, 550);
-            this.Controls.Add(this.button1);
             this.Controls.Add(this.nameLabel);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.balanceLabel);
             this.Controls.Add(this.buttonBet);
             this.Controls.Add(this.groupBoxRightScore);
-            this.Controls.Add(this.groupBoxBetTeam);
             this.Controls.Add(this.labelBetCredits);
             this.Controls.Add(this.numericUpDownBet);
             this.Controls.Add(this.label1);
@@ -208,8 +202,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown2)).EndInit();
             this.groupBoxRightScore.ResumeLayout(false);
             this.groupBoxRightScore.PerformLayout();
-            this.groupBoxBetTeam.ResumeLayout(false);
-            this.groupBoxBetTeam.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
