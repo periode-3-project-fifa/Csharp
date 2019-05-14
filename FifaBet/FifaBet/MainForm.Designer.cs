@@ -42,14 +42,14 @@
             this.balanceLabel = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.nameLabel = new System.Windows.Forms.Label();
-            this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.radioButtonWinnerTeamOne = new System.Windows.Forms.RadioButton();
+            this.choseTeamGroupBox = new System.Windows.Forms.GroupBox();
             this.radioButtonWinnerTeamTwo = new System.Windows.Forms.RadioButton();
+            this.radioButtonWinnerTeamOne = new System.Windows.Forms.RadioButton();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDownBet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown2)).BeginInit();
             this.groupBoxRightScore.SuspendLayout();
-            this.groupBox1.SuspendLayout();
+            this.choseTeamGroupBox.SuspendLayout();
             this.SuspendLayout();
             // 
             // labelCredits
@@ -183,27 +183,16 @@
             this.nameLabel.Text = "label3";
             this.nameLabel.DoubleClick += new System.EventHandler(this.nameLabel_DoubleClick);
             // 
-            // groupBox1
+            // choseTeamGroupBox
             // 
-            this.groupBox1.Controls.Add(this.radioButtonWinnerTeamTwo);
-            this.groupBox1.Controls.Add(this.radioButtonWinnerTeamOne);
-            this.groupBox1.Location = new System.Drawing.Point(108, 210);
-            this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(200, 100);
-            this.groupBox1.TabIndex = 17;
-            this.groupBox1.TabStop = false;
-            this.groupBox1.Text = "groupBox1";
-            // 
-            // radioButtonWinnerTeamOne
-            // 
-            this.radioButtonWinnerTeamOne.AutoSize = true;
-            this.radioButtonWinnerTeamOne.Location = new System.Drawing.Point(7, 40);
-            this.radioButtonWinnerTeamOne.Name = "radioButtonWinnerTeamOne";
-            this.radioButtonWinnerTeamOne.Size = new System.Drawing.Size(61, 17);
-            this.radioButtonWinnerTeamOne.TabIndex = 0;
-            this.radioButtonWinnerTeamOne.TabStop = true;
-            this.radioButtonWinnerTeamOne.Text = "Team 1";
-            this.radioButtonWinnerTeamOne.UseVisualStyleBackColor = true;
+            this.choseTeamGroupBox.Controls.Add(this.radioButtonWinnerTeamTwo);
+            this.choseTeamGroupBox.Controls.Add(this.radioButtonWinnerTeamOne);
+            this.choseTeamGroupBox.Location = new System.Drawing.Point(108, 210);
+            this.choseTeamGroupBox.Name = "choseTeamGroupBox";
+            this.choseTeamGroupBox.Size = new System.Drawing.Size(200, 100);
+            this.choseTeamGroupBox.TabIndex = 17;
+            this.choseTeamGroupBox.TabStop = false;
+            this.choseTeamGroupBox.Text = "Kies Team";
             // 
             // radioButtonWinnerTeamTwo
             // 
@@ -216,12 +205,23 @@
             this.radioButtonWinnerTeamTwo.Text = "Team 2";
             this.radioButtonWinnerTeamTwo.UseVisualStyleBackColor = true;
             // 
+            // radioButtonWinnerTeamOne
+            // 
+            this.radioButtonWinnerTeamOne.AutoSize = true;
+            this.radioButtonWinnerTeamOne.Location = new System.Drawing.Point(7, 40);
+            this.radioButtonWinnerTeamOne.Name = "radioButtonWinnerTeamOne";
+            this.radioButtonWinnerTeamOne.Size = new System.Drawing.Size(61, 17);
+            this.radioButtonWinnerTeamOne.TabIndex = 0;
+            this.radioButtonWinnerTeamOne.TabStop = true;
+            this.radioButtonWinnerTeamOne.Text = "Team 1";
+            this.radioButtonWinnerTeamOne.UseVisualStyleBackColor = true;
+            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(424, 550);
-            this.Controls.Add(this.groupBox1);
+            this.Controls.Add(this.choseTeamGroupBox);
             this.Controls.Add(this.nameLabel);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.balanceLabel);
@@ -240,8 +240,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown2)).EndInit();
             this.groupBoxRightScore.ResumeLayout(false);
             this.groupBoxRightScore.PerformLayout();
-            this.groupBox1.ResumeLayout(false);
-            this.groupBox1.PerformLayout();
+            this.choseTeamGroupBox.ResumeLayout(false);
+            this.choseTeamGroupBox.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -263,7 +263,7 @@
         private System.Windows.Forms.Label balanceLabel;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label nameLabel;
-        private System.Windows.Forms.GroupBox groupBox1;
+        private System.Windows.Forms.GroupBox choseTeamGroupBox;
         private System.Windows.Forms.RadioButton radioButtonWinnerTeamTwo;
         private System.Windows.Forms.RadioButton radioButtonWinnerTeamOne;
     }

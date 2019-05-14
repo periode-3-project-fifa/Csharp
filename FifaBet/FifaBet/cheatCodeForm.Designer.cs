@@ -41,6 +41,7 @@
             this.cheatCodeTextBox.Size = new System.Drawing.Size(207, 20);
             this.cheatCodeTextBox.TabIndex = 0;
             this.cheatCodeTextBox.TextChanged += new System.EventHandler(this.cheatCodeTextBox_TextChanged);
+            this.cheatCodeTextBox.KeyUp += new System.Windows.Forms.KeyEventHandler(this.cheatCodeTextBox_KeyUp);
             // 
             // cheatCodeButton
             // 

@@ -24,6 +24,7 @@ namespace FifaBet
 
         private void cheatCodeButton_Click(object sender, EventArgs e)
         {
+            //code om de cheatcode te uitvoeren als het goed is voer die hem uit als fout is krijg je melding
             if(cheatCodeTextBox.Text == "fifacheatcode")
             {
                 balance = 50;
@@ -41,6 +42,14 @@ namespace FifaBet
         private void cheatCodeTextBox_TextChanged(object sender, EventArgs e)
         {
             cheatcodes = cheatCodeTextBox.Text;
+        }
+
+        private void cheatCodeTextBox_KeyUp(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                cheatCodeButton.PerformClick();
+            }
         }
     }
 }

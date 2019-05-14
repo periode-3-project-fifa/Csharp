@@ -21,11 +21,18 @@ namespace FifaBet
 
         private void createNewUser_Click(object sender, EventArgs e)
         {
-            naam = nameTextBox.Text;
+            if(string.IsNullOrEmpty(nameTextBox.Text))
+            {
+                MessageBox.Show("voer een naam in");
+            }
+            else
+            {
+                naam = nameTextBox.Text;
 
-            MessageBox.Show("Welkom" + " " + naam);
+                MessageBox.Show("Welkom" + " " + naam);
 
-            this.Close();
+                this.Close();
+            }
         }
 
 
@@ -34,6 +41,20 @@ namespace FifaBet
             if (e.KeyCode == Keys.Enter)
             {
                 createNewUser.PerformClick();
+            }
+        }
+
+        private void gokkerCreateForm_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            //zorgt er voor dat je de form niet kan sluiten voordat je een naam heb ingevoerd
+            if(string.IsNullOrEmpty(nameTextBox.Text))
+            {
+                MessageBox.Show("Voer eerst een naam in om de form te sluiten.");
+                e.Cancel = true;
+            }
+            else
+            {
+                e.Cancel = false;
             }
         }
     }
