@@ -22,6 +22,7 @@ namespace FifaBet
             InitializeComponent();
 
             UpdateBalanceLabel(); //update de label.
+
         }
 
         private void MainForm_Load(object sender, EventArgs e)
@@ -30,12 +31,17 @@ namespace FifaBet
             newProfiel.ShowDialog();
             nameLabel.Text = newProfiel.naam;
 
+            if(nameLabel.Text == "")
+            {
+                this.Close();
+            }
+
             System.Net.WebClient downloader = new System.Net.WebClient();
             string fifaJson;
 
             try
             {
-                fifaJson = downloader.DownloadString("http://localhost/Project%20fifa/PHP/PHP/api.php");
+                fifaJson = downloader.DownloadString("http://localhost:63342/Voetbal_app/PHP/PHP/api.php?_ijt=jr1tjc33djqsjfqeg8tq7n3pi5");
                 List<fifateam> teams = JsonConvert.DeserializeObject<List<fifateam>>(fifaJson);
 
 

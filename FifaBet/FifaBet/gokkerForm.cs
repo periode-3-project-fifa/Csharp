@@ -44,7 +44,7 @@ namespace FifaBet
             }
         }
 
-        private void gokkerCreateForm_FormClosing(object sender, FormClosingEventArgs e)
+        /*private void gokkerCreateForm_FormClosing(object sender, FormClosingEventArgs e)
         {
             //zorgt er voor dat je de form niet kan sluiten voordat je een naam heb ingevoerd
             if(string.IsNullOrEmpty(nameTextBox.Text))
@@ -56,6 +56,6 @@ namespace FifaBet
             {
                 e.Cancel = false;
             }
-        }
+        }*/
     }
 }
