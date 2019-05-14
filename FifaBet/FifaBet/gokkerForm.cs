@@ -27,5 +27,14 @@ namespace FifaBet
 
             this.Close();
         }
+
+
+        private void nameTextBox_KeyUp(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                createNewUser.PerformClick();
+            }
+        }
     }
 }

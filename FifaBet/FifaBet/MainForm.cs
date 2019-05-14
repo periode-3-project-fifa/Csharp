@@ -3,6 +3,7 @@ using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Diagnostics;
 using System.Drawing;
 using System.Linq;
 using System.Text;
@@ -14,13 +15,12 @@ namespace FifaBet
 {
     public partial class MainForm : Form
     {
-        int balance;
+        public int balance = 0; // Saldo 
 
         public MainForm()
         {
             InitializeComponent();
 
-            balance = 50; //Hoeveel geld iedereen heeft.
             UpdateBalanceLabel(); //update de label.
         }
 
@@ -51,9 +51,10 @@ namespace FifaBet
             }
         }
 
-        private void UpdateBalanceLabel()
+        public void UpdateBalanceLabel()
         {
-            balanceLabel.Text = balance.ToString(); //Update de label.
+            balanceLabel.Text = String.Format("{0}",this.balance); //Update de label.
+            Debug.WriteLine(String.Format("{0}", this.balance)); // check of de code werkt in de debug!
         }
 
         private void nameLabel_DoubleClick(object sender, EventArgs e)
@@ -62,7 +63,12 @@ namespace FifaBet
             if( balance == 0)
             {
                 cheatCodeForm cheatcode = new cheatCodeForm();
-                cheatcode.ShowDialog();
+                if(cheatcode.ShowDialog() == DialogResult.OK) //Als de cheatcode goed is voer die deze code uit
+                {
+                    balance = cheatcode.balance;
+                }
+                
+                UpdateBalanceLabel();
             }
             else
             {

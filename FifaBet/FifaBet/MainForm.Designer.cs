@@ -45,6 +45,7 @@
             this.balanceLabel = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.nameLabel = new System.Windows.Forms.Label();
+            this.button1 = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDownBet)).BeginInit();
             this.groupBoxBetTeam.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).BeginInit();
@@ -189,9 +190,9 @@
             this.balanceLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.balanceLabel.Location = new System.Drawing.Point(371, 12);
             this.balanceLabel.Name = "balanceLabel";
-            this.balanceLabel.Size = new System.Drawing.Size(51, 16);
+            this.balanceLabel.Size = new System.Drawing.Size(49, 16);
             this.balanceLabel.TabIndex = 14;
-            this.balanceLabel.Text = "label2";
+            this.balanceLabel.Text = "Saldo";
             // 
             // label2
             // 
@@ -214,11 +215,21 @@
             this.nameLabel.Text = "label3";
             this.nameLabel.DoubleClick += new System.EventHandler(this.nameLabel_DoubleClick);
             // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(358, 135);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(75, 23);
+            this.button1.TabIndex = 17;
+            this.button1.Text = "button1";
+            this.button1.UseVisualStyleBackColor = true;
+            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(424, 550);
+            this.Controls.Add(this.button1);
             this.Controls.Add(this.nameLabel);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.balanceLabel);
@@ -264,6 +275,7 @@
         private System.Windows.Forms.Label balanceLabel;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label nameLabel;
+        private System.Windows.Forms.Button button1;
     }
 }
 

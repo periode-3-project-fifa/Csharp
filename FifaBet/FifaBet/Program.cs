@@ -11,6 +11,8 @@ namespace FifaBet
         /// <summary>
         /// The main entry point for the application.
         /// </summary>
+        /// 
+
         [STAThread]
         static void Main()
         {
@@ -18,5 +20,6 @@ namespace FifaBet
             Application.SetCompatibleTextRenderingDefault(false);
             Application.Run(new MainForm());
         }
+
     }
 }
