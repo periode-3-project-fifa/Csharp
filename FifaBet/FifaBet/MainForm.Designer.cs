@@ -69,6 +69,7 @@
             this.comboBoxGames.Name = "comboBoxGames";
             this.comboBoxGames.Size = new System.Drawing.Size(191, 21);
             this.comboBoxGames.TabIndex = 1;
+            this.comboBoxGames.Text = "Choose a match";
             // 
             // label1
             // 
