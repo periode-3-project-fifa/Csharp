@@ -52,3 +52,19 @@ C:\xampp\htdocs\Project fifa\C#\FifaBet\FifaBet\obj\Debug\FifaBet.exe
 C:\xampp\htdocs\Project fifa\C#\FifaBet\FifaBet\obj\Debug\FifaBet.pdb
 C:\xampp\htdocs\Project fifa\C#\FifaBet\FifaBet\obj\Debug\FifaBet.gokkerCreateForm.resources
 C:\xampp\htdocs\Project fifa\C#\FifaBet\FifaBet\obj\Debug\FifaBet.cheatCodeForm.resources
+D:\Xampp\htdocs\Proj_fifa\Csharp\FifaBet\FifaBet\bin\Debug\FifaBet.exe.config
+D:\Xampp\htdocs\Proj_fifa\Csharp\FifaBet\FifaBet\bin\Debug\FifaBet.exe
+D:\Xampp\htdocs\Proj_fifa\Csharp\FifaBet\FifaBet\bin\Debug\FifaBet.pdb
+D:\Xampp\htdocs\Proj_fifa\Csharp\FifaBet\FifaBet\bin\Debug\Newtonsoft.Json.dll
+D:\Xampp\htdocs\Proj_fifa\Csharp\FifaBet\FifaBet\bin\Debug\Newtonsoft.Json.pdb
+D:\Xampp\htdocs\Proj_fifa\Csharp\FifaBet\FifaBet\bin\Debug\Newtonsoft.Json.xml
+D:\Xampp\htdocs\Proj_fifa\Csharp\FifaBet\FifaBet\obj\Debug\FifaBet.csprojAssemblyReference.cache
+D:\Xampp\htdocs\Proj_fifa\Csharp\FifaBet\FifaBet\obj\Debug\FifaBet.cheatCodeForm.resources
+D:\Xampp\htdocs\Proj_fifa\Csharp\FifaBet\FifaBet\obj\Debug\FifaBet.gokkerCreateForm.resources
+D:\Xampp\htdocs\Proj_fifa\Csharp\FifaBet\FifaBet\obj\Debug\FifaBet.MainForm.resources
+D:\Xampp\htdocs\Proj_fifa\Csharp\FifaBet\FifaBet\obj\Debug\FifaBet.Properties.Resources.resources
+D:\Xampp\htdocs\Proj_fifa\Csharp\FifaBet\FifaBet\obj\Debug\FifaBet.csproj.GenerateResource.cache
+D:\Xampp\htdocs\Proj_fifa\Csharp\FifaBet\FifaBet\obj\Debug\FifaBet.csproj.CoreCompileInputs.cache
+D:\Xampp\htdocs\Proj_fifa\Csharp\FifaBet\FifaBet\obj\Debug\FifaBet.csproj.CopyComplete
+D:\Xampp\htdocs\Proj_fifa\Csharp\FifaBet\FifaBet\obj\Debug\FifaBet.exe
+D:\Xampp\htdocs\Proj_fifa\Csharp\FifaBet\FifaBet\obj\Debug\FifaBet.pdb
