@@ -33,9 +33,6 @@
             this.label1 = new System.Windows.Forms.Label();
             this.numericUpDownBet = new System.Windows.Forms.NumericUpDown();
             this.labelBetCredits = new System.Windows.Forms.Label();
-            this.checkBoxTeamOne = new System.Windows.Forms.CheckBox();
-            this.checkBoxTeamTwo = new System.Windows.Forms.CheckBox();
-            this.groupBoxBetTeam = new System.Windows.Forms.GroupBox();
             this.numericUpDown1 = new System.Windows.Forms.NumericUpDown();
             this.numericUpDown2 = new System.Windows.Forms.NumericUpDown();
             this.labelTeamOne = new System.Windows.Forms.Label();
@@ -45,11 +42,14 @@
             this.balanceLabel = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.nameLabel = new System.Windows.Forms.Label();
+            this.groupBoxBetTeam = new System.Windows.Forms.GroupBox();
+            this.radioButtonTeamOneWinner = new System.Windows.Forms.RadioButton();
+            this.radioButtonTeamTwoWinner = new System.Windows.Forms.RadioButton();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDownBet)).BeginInit();
-            this.groupBoxBetTeam.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown2)).BeginInit();
             this.groupBoxRightScore.SuspendLayout();
+            this.groupBoxBetTeam.SuspendLayout();
             this.SuspendLayout();
             // 
             // labelCredits
@@ -96,37 +96,6 @@
             this.labelBetCredits.Size = new System.Drawing.Size(59, 20);
             this.labelBetCredits.TabIndex = 4;
             this.labelBetCredits.Text = "Credits";
-            // 
-            // checkBoxTeamOne
-            // 
-            this.checkBoxTeamOne.AutoSize = true;
-            this.checkBoxTeamOne.Location = new System.Drawing.Point(6, 30);
-            this.checkBoxTeamOne.Name = "checkBoxTeamOne";
-            this.checkBoxTeamOne.Size = new System.Drawing.Size(62, 17);
-            this.checkBoxTeamOne.TabIndex = 5;
-            this.checkBoxTeamOne.Text = "Team 1";
-            this.checkBoxTeamOne.UseVisualStyleBackColor = true;
-            // 
-            // checkBoxTeamTwo
-            // 
-            this.checkBoxTeamTwo.AutoSize = true;
-            this.checkBoxTeamTwo.Location = new System.Drawing.Point(123, 30);
-            this.checkBoxTeamTwo.Name = "checkBoxTeamTwo";
-            this.checkBoxTeamTwo.Size = new System.Drawing.Size(62, 17);
-            this.checkBoxTeamTwo.TabIndex = 6;
-            this.checkBoxTeamTwo.Text = "Team 2";
-            this.checkBoxTeamTwo.UseVisualStyleBackColor = true;
-            // 
-            // groupBoxBetTeam
-            // 
-            this.groupBoxBetTeam.Controls.Add(this.checkBoxTeamOne);
-            this.groupBoxBetTeam.Controls.Add(this.checkBoxTeamTwo);
-            this.groupBoxBetTeam.Location = new System.Drawing.Point(108, 219);
-            this.groupBoxBetTeam.Name = "groupBoxBetTeam";
-            this.groupBoxBetTeam.Size = new System.Drawing.Size(191, 67);
-            this.groupBoxBetTeam.TabIndex = 7;
-            this.groupBoxBetTeam.TabStop = false;
-            this.groupBoxBetTeam.Text = "Winner";
             // 
             // numericUpDown1
             // 
@@ -214,6 +183,39 @@
             this.nameLabel.Text = "label3";
             this.nameLabel.DoubleClick += new System.EventHandler(this.nameLabel_DoubleClick);
             // 
+            // groupBoxBetTeam
+            // 
+            this.groupBoxBetTeam.Controls.Add(this.radioButtonTeamTwoWinner);
+            this.groupBoxBetTeam.Controls.Add(this.radioButtonTeamOneWinner);
+            this.groupBoxBetTeam.Location = new System.Drawing.Point(108, 219);
+            this.groupBoxBetTeam.Name = "groupBoxBetTeam";
+            this.groupBoxBetTeam.Size = new System.Drawing.Size(191, 67);
+            this.groupBoxBetTeam.TabIndex = 7;
+            this.groupBoxBetTeam.TabStop = false;
+            this.groupBoxBetTeam.Text = "Winner";
+            // 
+            // radioButtonTeamOneWinner
+            // 
+            this.radioButtonTeamOneWinner.AutoSize = true;
+            this.radioButtonTeamOneWinner.Location = new System.Drawing.Point(9, 29);
+            this.radioButtonTeamOneWinner.Name = "radioButtonTeamOneWinner";
+            this.radioButtonTeamOneWinner.Size = new System.Drawing.Size(61, 17);
+            this.radioButtonTeamOneWinner.TabIndex = 0;
+            this.radioButtonTeamOneWinner.TabStop = true;
+            this.radioButtonTeamOneWinner.Text = "Team 1";
+            this.radioButtonTeamOneWinner.UseVisualStyleBackColor = true;
+            // 
+            // radioButtonTeamTwoWinner
+            // 
+            this.radioButtonTeamTwoWinner.AutoSize = true;
+            this.radioButtonTeamTwoWinner.Location = new System.Drawing.Point(100, 29);
+            this.radioButtonTeamTwoWinner.Name = "radioButtonTeamTwoWinner";
+            this.radioButtonTeamTwoWinner.Size = new System.Drawing.Size(61, 17);
+            this.radioButtonTeamTwoWinner.TabIndex = 1;
+            this.radioButtonTeamTwoWinner.TabStop = true;
+            this.radioButtonTeamTwoWinner.Text = "Team 2";
+            this.radioButtonTeamTwoWinner.UseVisualStyleBackColor = true;
+            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -234,12 +236,12 @@
             this.Text = "FIFA Bidden";
             this.Load += new System.EventHandler(this.MainForm_Load);
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDownBet)).EndInit();
-            this.groupBoxBetTeam.ResumeLayout(false);
-            this.groupBoxBetTeam.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown2)).EndInit();
             this.groupBoxRightScore.ResumeLayout(false);
             this.groupBoxRightScore.PerformLayout();
+            this.groupBoxBetTeam.ResumeLayout(false);
+            this.groupBoxBetTeam.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -252,9 +254,6 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.NumericUpDown numericUpDownBet;
         private System.Windows.Forms.Label labelBetCredits;
-        private System.Windows.Forms.CheckBox checkBoxTeamOne;
-        private System.Windows.Forms.CheckBox checkBoxTeamTwo;
-        private System.Windows.Forms.GroupBox groupBoxBetTeam;
         private System.Windows.Forms.NumericUpDown numericUpDown1;
         private System.Windows.Forms.NumericUpDown numericUpDown2;
         private System.Windows.Forms.Label labelTeamOne;
@@ -264,6 +263,9 @@
         private System.Windows.Forms.Label balanceLabel;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label nameLabel;
+        private System.Windows.Forms.GroupBox groupBoxBetTeam;
+        private System.Windows.Forms.RadioButton radioButtonTeamTwoWinner;
+        private System.Windows.Forms.RadioButton radioButtonTeamOneWinner;
     }
 }
 

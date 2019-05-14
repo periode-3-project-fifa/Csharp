@@ -35,7 +35,7 @@ namespace FifaBet
 
             try
             {
-                fifaJson = downloader.DownloadString("http://localhost/Project%20fifa/PHP/PHP/api.php");
+                fifaJson = downloader.DownloadString("http://localhost/Proj_fifa/PHP/PHP/api.php");
                 List<fifateam> teams = JsonConvert.DeserializeObject<List<fifateam>>(fifaJson);
 
 
@@ -58,7 +58,7 @@ namespace FifaBet
 
         private void nameLabel_DoubleClick(object sender, EventArgs e)
         {
-            //Deze code actieveer de cheatcode!
+            //Deze code actieveert de cheatcode!
             if( balance == 0)
             {
                 cheatCodeForm cheatcode = new cheatCodeForm();
