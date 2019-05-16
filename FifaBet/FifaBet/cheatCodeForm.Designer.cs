@@ -82,6 +82,7 @@
             this.Controls.Add(this.cheatCodeTextBox);
             this.Name = "cheatCodeForm";
             this.Text = "cheatCodeForm";
+            this.Load += new System.EventHandler(this.cheatCodeForm_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 

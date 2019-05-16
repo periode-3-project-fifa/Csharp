@@ -51,5 +51,10 @@ namespace FifaBet
                 cheatCodeButton.PerformClick();
             }
         }
+
+        private void cheatCodeForm_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }
