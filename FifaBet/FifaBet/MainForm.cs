@@ -16,6 +16,8 @@ namespace FifaBet
     public partial class MainForm : Form
     {
         public int balance = 0; // Saldo 
+        int creditsBet = 0; // credits gebet
+
 
         public MainForm()
         {
@@ -42,7 +44,7 @@ namespace FifaBet
 
             try
             {
-                fifaJson = downloader.DownloadString("http://localhost:63342/Voetbal_app/PHP/PHP/api.php?_ijt=m5p02i0r5dtujn4enamsq60tk4");
+                fifaJson = downloader.DownloadString("http://localhost:63342/Voetbal_app/PHP/PHP/api.php?_ijt=4gcut4838r8jtvbcvm6sq3iql7");
                 List<fifateam> teams = JsonConvert.DeserializeObject<List<fifateam>>(fifaJson);
 
 
@@ -92,12 +94,11 @@ namespace FifaBet
         {
             ///TODO:
             getAmountBetCredits();
-            getCredits();
             /// ^
             /// |
             ///Get the amount of credits on your account
             ///Get the amount of credits you want to bet
-            checkCreditBetAmount();
+            checkCreditBetAmount(creditsBet, balance);
             /// ^
             /// |
             ///Check if the credits you want to bet are more than the amount you have
@@ -115,7 +116,7 @@ namespace FifaBet
             ///Check how much points team 2 gets
         }
 
-        private void checkCreditBetAmount()
+        private void checkCreditBetAmount(int creditsBet, int balance)
         {
             /// check if you have enough balance
             if(creditsBet > balance)
@@ -130,23 +131,22 @@ namespace FifaBet
             throw new NotImplementedException();
         }
 
-        private int getCredits()
-        {
-            /// get the balance
-            return balance;
-        }
-
-        private int getAmountBetCredits()
+        private void getAmountBetCredits()
         {
             /// get the amount of credits the player bets
-            int creditsBet = (int)numericUpDownBet.Value;
-            return creditsBet;
+            creditsBet = (int)numericUpDownBet.Value;
         }
 
         private void checkScores()
         {
             ///check what the player filled in as scores
             throw new NotImplementedException();
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            getAmountBetCredits();
+            MessageBox.Show(creditsBet.ToString());
         }
     }
 }
