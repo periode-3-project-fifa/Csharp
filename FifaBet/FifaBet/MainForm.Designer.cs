@@ -152,6 +152,7 @@
             this.buttonBet.TabIndex = 13;
             this.buttonBet.Text = "Inzetten";
             this.buttonBet.UseVisualStyleBackColor = true;
+            this.buttonBet.Click += new System.EventHandler(this.buttonBet_Click);
             // 
             // balanceLabel
             // 
