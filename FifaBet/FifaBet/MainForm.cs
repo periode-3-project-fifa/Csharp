@@ -27,6 +27,7 @@ namespace FifaBet
 
         private void MainForm_Load(object sender, EventArgs e)
         {
+            //deze laat je naam zien op je gok applicatie
             gokkerCreateForm newProfiel = new gokkerCreateForm();
             newProfiel.ShowDialog();
             nameLabel.Text = newProfiel.naam;
