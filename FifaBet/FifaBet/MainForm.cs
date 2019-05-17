@@ -47,7 +47,7 @@ namespace FifaBet
             try
             {
                 // api link
-                fifaJson = downloader.DownloadString("http://localhost:63342/Voetbal_app/PHP/PHP/api.php?_ijt=4gcut4838r8jtvbcvm6sq3iql7");
+                fifaJson = downloader.DownloadString("http://local2host/Project%20fifa/PHP/PHP/api.php");
                 List<fifateam> teams = JsonConvert.DeserializeObject<List<fifateam>>(fifaJson);
 
                 // zet de team in een comebox met buhulp van een list

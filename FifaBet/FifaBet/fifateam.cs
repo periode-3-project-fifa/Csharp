@@ -9,13 +9,18 @@ namespace FifaBet
 {
     public class fifateam
     {
-        public string name { get; set; }
+        public string home { get; set; }
+        public string away { get; set; }
         public int id { get; set; }
-        public int points { get; set; }
+        public int score { get; set; }
 
         public override string ToString()
         {
-            return this.name;
+            return string.Format("{0}, {1}", home, away);  
+
         }
+
+        
+
     }
 }
