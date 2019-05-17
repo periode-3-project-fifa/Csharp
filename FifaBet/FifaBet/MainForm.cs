@@ -17,7 +17,8 @@ namespace FifaBet
     {
         public int balance = 0; // Saldo 
         int creditsBet = 0; // credits gebet
-
+        string nameTeamOne = "";
+        string nameTeamTwo = "";
 
         public MainForm()
         {
@@ -94,26 +95,67 @@ namespace FifaBet
         {
             ///TODO:
             getAmountBetCredits();
+            if (creditsBet == 0)
+            {
+                MessageBox.Show("Zet altublieft een hoger aantal credits in");
+            }
+
             /// ^
             /// |
             ///Get the amount of credits on your account
             ///Get the amount of credits you want to bet
-            checkCreditBetAmount(creditsBet, balance);
-            /// ^
-            /// |
-            ///Check if the credits you want to bet are more than the amount you have
-            ///yes: Error message || no: place bet
-            ///
-            checkSelectedTeam();
-            /// ^
-            /// |
-            ///Check if what team team 1 and 2 are
-            ///Check what team is selected to win
-            checkScores();
-            /// ^
-            /// |
-            ///Check how much points team 1 gets
-            ///Check how much points team 2 gets
+            //checkCreditBetAmount(creditsBet, balance);
+
+            else
+            {
+                if (!enoughCredits())
+                {
+                    MessageBox.Show("Je hebt maar " + balance + " Credits, dus niet genoeg");
+                    /// ^
+                    /// |
+                    ///Check if the credits you want to bet are more than the amount you have
+                    ///yes: Error message || no: place bet
+                    ///
+                }
+                else
+                {
+                    if (!radioButtonWinnerTeamOne.Checked && !radioButtonWinnerTeamTwo.Checked)
+                    {
+                        MessageBox.Show("Selecteer een team alstublieft");
+                    }
+                    /// ^
+                    /// |
+                    ///Check if what team team 1 and 2 are
+                    ///Check what team is selected to win
+                    else
+                    {
+                        int pointsTeamOne = (int)numericUpDown1.Value;
+                        int pointsTeamtwo = (int)numericUpDown2.Value;
+                        /// ^
+                        /// |
+                        ///Check how much points team 1 gets
+                        ///Check how much points team 2 gets
+                        if (radioButtonWinnerTeamOne.Checked)
+                        {
+                            MessageBox.Show("U heeft op " + nameTeamOne + " ingezet");
+                        }
+                        else if (radioButtonWinnerTeamTwo.Checked)
+                        {
+                            MessageBox.Show("U heeft op " + nameTeamTwo + " ingezet");
+                        }
+                    }
+                }
+            }
+        }
+
+        private bool enoughCredits()
+        {
+            ///check for enough credits
+            if(creditsBet > balance)
+            {
+                return false;
+            }
+            else { return true; }
         }
 
         private void checkCreditBetAmount(int creditsBet, int balance)
@@ -125,10 +167,9 @@ namespace FifaBet
             }
         }
 
-        private void checkSelectedTeam()
+        private void test()
         {
-            /// check which team is selected to be a winner
-            throw new NotImplementedException();
+
         }
 
         private void getAmountBetCredits()
@@ -140,13 +181,8 @@ namespace FifaBet
         private void checkScores()
         {
             ///check what the player filled in as scores
-            throw new NotImplementedException();
-        }
-
-        private void button1_Click(object sender, EventArgs e)
-        {
-            getAmountBetCredits();
-            MessageBox.Show(creditsBet.ToString());
+            int teamOnePoints = (int)numericUpDown1.Value;
+            int teamTwoPoints = (int)numericUpDown2.Value;
         }
     }
 }

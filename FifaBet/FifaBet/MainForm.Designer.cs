@@ -45,7 +45,6 @@
             this.choseTeamGroupBox = new System.Windows.Forms.GroupBox();
             this.radioButtonWinnerTeamTwo = new System.Windows.Forms.RadioButton();
             this.radioButtonWinnerTeamOne = new System.Windows.Forms.RadioButton();
-            this.button1 = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDownBet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown2)).BeginInit();
@@ -219,22 +218,11 @@
             this.radioButtonWinnerTeamOne.Text = "Team 1";
             this.radioButtonWinnerTeamOne.UseVisualStyleBackColor = true;
             // 
-            // button1
-            // 
-            this.button1.Location = new System.Drawing.Point(317, 134);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 23);
-            this.button1.TabIndex = 18;
-            this.button1.Text = "button1";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
-            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(424, 550);
-            this.Controls.Add(this.button1);
             this.Controls.Add(this.choseTeamGroupBox);
             this.Controls.Add(this.nameLabel);
             this.Controls.Add(this.label2);
@@ -280,7 +268,6 @@
         private System.Windows.Forms.GroupBox choseTeamGroupBox;
         private System.Windows.Forms.RadioButton radioButtonWinnerTeamTwo;
         private System.Windows.Forms.RadioButton radioButtonWinnerTeamOne;
-        private System.Windows.Forms.Button button1;
     }
 }
 
