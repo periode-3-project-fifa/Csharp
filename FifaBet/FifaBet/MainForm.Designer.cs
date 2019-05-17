@@ -45,6 +45,7 @@
             this.choseTeamGroupBox = new System.Windows.Forms.GroupBox();
             this.radioButtonWinnerTeamTwo = new System.Windows.Forms.RadioButton();
             this.radioButtonWinnerTeamOne = new System.Windows.Forms.RadioButton();
+            this.checkBox1 = new System.Windows.Forms.CheckBox();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDownBet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown2)).BeginInit();
@@ -218,11 +219,24 @@
             this.radioButtonWinnerTeamOne.Text = "Team 1";
             this.radioButtonWinnerTeamOne.UseVisualStyleBackColor = true;
             // 
+            // checkBox1
+            // 
+            this.checkBox1.AutoSize = true;
+            this.checkBox1.Location = new System.Drawing.Point(326, 150);
+            this.checkBox1.Name = "checkBox1";
+            this.checkBox1.Size = new System.Drawing.Size(80, 17);
+            this.checkBox1.TabIndex = 18;
+            this.checkBox1.Text = "checkBox1";
+            this.checkBox1.UseVisualStyleBackColor = true;
+            this.checkBox1.CheckedChanged += new System.EventHandler(this.checkBox1_CheckedChanged);
+            this.checkBox1.Click += new System.EventHandler(this.checkBox1_Click);
+            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(424, 550);
+            this.Controls.Add(this.checkBox1);
             this.Controls.Add(this.choseTeamGroupBox);
             this.Controls.Add(this.nameLabel);
             this.Controls.Add(this.label2);
@@ -268,6 +282,7 @@
         private System.Windows.Forms.GroupBox choseTeamGroupBox;
         private System.Windows.Forms.RadioButton radioButtonWinnerTeamTwo;
         private System.Windows.Forms.RadioButton radioButtonWinnerTeamOne;
+        private System.Windows.Forms.CheckBox checkBox1;
     }
 }
 
