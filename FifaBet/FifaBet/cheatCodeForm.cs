@@ -41,11 +41,13 @@ namespace FifaBet
 
         private void cheatCodeTextBox_TextChanged(object sender, EventArgs e)
         {
+            //roept de textboxaan.
             cheatcodes = cheatCodeTextBox.Text;
         }
 
         private void cheatCodeTextBox_KeyUp(object sender, KeyEventArgs e)
         {
+            //als je enter klik op textbox accepteerd die het ook je hoef niet persee om de knop klikken
             if (e.KeyCode == Keys.Enter)
             {
                 cheatCodeButton.PerformClick();

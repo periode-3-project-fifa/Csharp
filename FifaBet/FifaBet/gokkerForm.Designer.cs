@@ -70,7 +70,6 @@
             this.Controls.Add(this.createNewUser);
             this.Name = "gokkerCreateForm";
             this.Text = "FIFA";
-            this.Load += new System.EventHandler(this.gokkerCreateForm_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 

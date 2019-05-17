@@ -12,6 +12,7 @@ namespace FifaBet
 {
     public partial class gokkerCreateForm : Form
     {
+        // naam van de user.
         public string naam;
 
         public gokkerCreateForm()
@@ -21,6 +22,8 @@ namespace FifaBet
 
         private void createNewUser_Click(object sender, EventArgs e)
         {
+            //hier geef die aan als de naam leeg is dat je een melding krijg.
+            //daarna als je naam heeft ingevuld krijg je een welkom bericht en sluit deze form.
             if(string.IsNullOrEmpty(nameTextBox.Text))
             {
                 MessageBox.Show("voer een naam in");
@@ -38,15 +41,11 @@ namespace FifaBet
 
         private void nameTextBox_KeyUp(object sender, KeyEventArgs e)
         {
+            //als je enter klik op textbox accepteerd die het ook je hoef niet persee om de knop klikken
             if (e.KeyCode == Keys.Enter)
             {
                 createNewUser.PerformClick();
             }
-        }
-
-        private void gokkerCreateForm_Load(object sender, EventArgs e)
-        {
-
         }
 
         /*private void gokkerCreateForm_FormClosing(object sender, FormClosingEventArgs e)

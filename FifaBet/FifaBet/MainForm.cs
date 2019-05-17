@@ -17,14 +17,14 @@ namespace FifaBet
     {
         public int balance = 0; // Saldo 
         int creditsBet = 0; // credits gebet
-        string keyCode = "1914-1648-1579-1815-1945-1568-1953";
-        string nameTeamOne = "Team1";
-        string nameTeamTwo = "Team2";
+        string keyCode = "1914-1648-1579-1815-1945-1568-1953"; //hardkey API
+        string nameTeamOne = "Team1";// naam van eerste team home game.
+        string nameTeamTwo = "Team2";// naam van tweede team away game.
         
         public MainForm()
         {
             InitializeComponent();
-            checkBox1.Text = "Unchecked";
+            checkBox1.Text = "Unchecked"; // voor lol
             UpdateBalanceLabel(); //update de label.
 
         }
@@ -40,16 +40,17 @@ namespace FifaBet
             {
                 this.Close();
             }
-
+            // API
             System.Net.WebClient downloader = new System.Net.WebClient();
             string fifaJson;
 
             try
             {
+                // api link
                 fifaJson = downloader.DownloadString("http://localhost:63342/Voetbal_app/PHP/PHP/api.php?_ijt=4gcut4838r8jtvbcvm6sq3iql7");
                 List<fifateam> teams = JsonConvert.DeserializeObject<List<fifateam>>(fifaJson);
 
-
+                // zet de team in een comebox met buhulp van een list
                 foreach (fifateam team in teams)
                 {
                     comboBoxGames.Items.Add(team);
@@ -58,6 +59,7 @@ namespace FifaBet
             }
             catch (System.Net.WebException)
             {
+                // als de api link niet knop krijg je deze melding
                 MessageBox.Show("er is iets misgegaan");
             }
         }
@@ -83,29 +85,29 @@ namespace FifaBet
             }
             else
             {
-                MessageBox.Show("Je hebt nog genoeg geld!");
+                MessageBox.Show("Je hebt nog genoeg geld!"); //als je geld heb krijg je deze bericht
             }
         }
 
         private void buttonBet_Click(object sender, EventArgs e)
         {
+            //hier plaats hij deze bed.
             placeBet();
-
         }
 
         private void placeBet()
         {
-            ///TODO:
+            // TODO:
             getAmountBetCredits();
             if (creditsBet == 0)
             {
                 MessageBox.Show("Zet altublieft een hoger aantal credits in");
             }
 
-            /// ^
-            /// |
-            ///Get the amount of credits on your account
-            ///Get the amount of credits you want to bet
+            // ^
+            // |
+            //Get the amount of credits on your account
+            //Get the amount of credits you want to bet
             //checkCreditBetAmount(creditsBet, balance);
 
             else
@@ -176,7 +178,7 @@ namespace FifaBet
 
         private bool enoughCredits()
         {
-            ///check for enough credits
+            //kijk of je genoeg credit heb
             if(creditsBet > balance)
             {
                 return false;
@@ -186,7 +188,7 @@ namespace FifaBet
 
         private void checkCreditBetAmount(int creditsBet, int balance)
         {
-            /// check if you have enough balance
+            // kijk of je genoeg belanse heb
             if(creditsBet > balance)
             {
                 MessageBox.Show("Je hebt maar " + balance + " Credits, dus niet genoeg");
@@ -200,19 +202,20 @@ namespace FifaBet
 
         private void getAmountBetCredits()
         {
-            /// get the amount of credits the player bets
+            // haal de hoeveelheid op die de speler heeft ingezet
             creditsBet = (int)numericUpDownBet.Value;
         }
 
         private void checkScores()
         {
-            ///check what the player filled in as scores
+            //kijk wat de speler heeft ingevuld in de scorebord.
             int teamOnePoints = (int)numericUpDown1.Value;
             int teamTwoPoints = (int)numericUpDown2.Value;
         }
 
         private void checkBox1_CheckedChanged(object sender, EventArgs e)
         {
+            // deze heeft stijn voor de lol gedaan.
             if (checkBox1.Checked)
             {
                 checkBox1.Text = "Checked";
