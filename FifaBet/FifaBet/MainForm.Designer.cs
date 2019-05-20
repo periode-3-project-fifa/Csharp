@@ -45,7 +45,7 @@
             this.choseTeamGroupBox = new System.Windows.Forms.GroupBox();
             this.radioButtonWinnerTeamTwo = new System.Windows.Forms.RadioButton();
             this.radioButtonWinnerTeamOne = new System.Windows.Forms.RadioButton();
-            this.checkBox1 = new System.Windows.Forms.CheckBox();
+            this.saveButton = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDownBet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown2)).BeginInit();
@@ -147,7 +147,7 @@
             // buttonBet
             // 
             this.buttonBet.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.buttonBet.Location = new System.Drawing.Point(108, 459);
+            this.buttonBet.Location = new System.Drawing.Point(108, 422);
             this.buttonBet.Name = "buttonBet";
             this.buttonBet.Size = new System.Drawing.Size(200, 42);
             this.buttonBet.TabIndex = 13;
@@ -219,24 +219,21 @@
             this.radioButtonWinnerTeamOne.Text = "Team 1";
             this.radioButtonWinnerTeamOne.UseVisualStyleBackColor = true;
             // 
-            // checkBox1
+            // saveButton
             // 
-            this.checkBox1.AutoSize = true;
-            this.checkBox1.Location = new System.Drawing.Point(326, 150);
-            this.checkBox1.Name = "checkBox1";
-            this.checkBox1.Size = new System.Drawing.Size(80, 17);
-            this.checkBox1.TabIndex = 18;
-            this.checkBox1.Text = "checkBox1";
-            this.checkBox1.UseVisualStyleBackColor = true;
-            this.checkBox1.CheckedChanged += new System.EventHandler(this.checkBox1_CheckedChanged);
-            this.checkBox1.Click += new System.EventHandler(this.checkBox1_Click);
+            this.saveButton.Location = new System.Drawing.Point(108, 470);
+            this.saveButton.Name = "saveButton";
+            this.saveButton.Size = new System.Drawing.Size(75, 23);
+            this.saveButton.TabIndex = 18;
+            this.saveButton.Text = "Save";
+            this.saveButton.UseVisualStyleBackColor = true;
             // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(424, 550);
-            this.Controls.Add(this.checkBox1);
+            this.ClientSize = new System.Drawing.Size(422, 497);
+            this.Controls.Add(this.saveButton);
             this.Controls.Add(this.choseTeamGroupBox);
             this.Controls.Add(this.nameLabel);
             this.Controls.Add(this.label2);
@@ -282,7 +279,7 @@
         private System.Windows.Forms.GroupBox choseTeamGroupBox;
         private System.Windows.Forms.RadioButton radioButtonWinnerTeamTwo;
         private System.Windows.Forms.RadioButton radioButtonWinnerTeamOne;
-        private System.Windows.Forms.CheckBox checkBox1;
+        private System.Windows.Forms.Button saveButton;
     }
 }
 

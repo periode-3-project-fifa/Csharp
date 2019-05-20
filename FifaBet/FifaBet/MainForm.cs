@@ -9,6 +9,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.IO;
 
 
 namespace FifaBet
@@ -17,14 +18,14 @@ namespace FifaBet
     {
         public int balance = 0; // Saldo 
         int creditsBet = 0; // credits gebet
-        string keyCode = "1914-1648-1579-1815-1945-1568-1953"; //hardkey API
+        string keyCode = "19141945"; //hardkey API
         string nameTeamOne = "Team1";// naam van eerste team home game.
         string nameTeamTwo = "Team2";// naam van tweede team away game.
         
         public MainForm()
         {
             InitializeComponent();
-            checkBox1.Text = "Unchecked"; // voor lol
+           // checkBox1.Text = "Unchecked"; // voor lol
             UpdateBalanceLabel(); //update de label.
 
         }
@@ -47,7 +48,7 @@ namespace FifaBet
             try
             {
                 // api link
-                fifaJson = downloader.DownloadString("http://local2host/Project%20fifa/PHP/PHP/api.php");
+                fifaJson = downloader.DownloadString("http://local2host/Project%20fifa/PHP/PHP/api.phpkey=19141945");
                 List<fifateam> teams = JsonConvert.DeserializeObject<List<fifateam>>(fifaJson);
 
                 // zet de team in een comebox met buhulp van een list
@@ -59,7 +60,7 @@ namespace FifaBet
             }
             catch (System.Net.WebException)
             {
-                // als de api link niet knop krijg je deze melding
+                // als de api link niet werkt krijg je deze melding
                 MessageBox.Show("er is iets misgegaan");
             }
         }
@@ -213,18 +214,18 @@ namespace FifaBet
             int teamTwoPoints = (int)numericUpDown2.Value;
         }
 
-        private void checkBox1_CheckedChanged(object sender, EventArgs e)
-        {
-            // deze heeft stijn voor de lol gedaan.
-            if (checkBox1.Checked)
-            {
-                checkBox1.Text = "Checked";
-            }
-            else
-            {
-                checkBox1.Text = "Unchecked";
-            }
-        }
+        //private void checkBox1_CheckedChanged(object sender, EventArgs e)
+        //{
+        //    // deze heeft stijn voor de lol gedaan.
+        //    if (checkBox1.Checked)
+        //    {
+        //        checkBox1.Text = "Checked";
+        //    }
+        //    else
+        //    {
+        //        checkBox1.Text = "Unchecked";
+        //    }
+        //}
 
         private void checkBox1_Click(object sender, EventArgs e)
         {

@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace FifaBet
 {
-    class Guy
+    class save
     {
 
     }
