@@ -16,7 +16,7 @@ namespace FifaBet
 {
     public partial class MainForm : Form
     {
-        public int balance = 0; // Saldo 
+        public int balance = 50; // Saldo 
         int creditsBet = 0; // credits gebet
         string keyCode = "19141945"; //hardkey API
         string nameTeamOne = "Team1";// naam van eerste team home game.
@@ -48,7 +48,7 @@ namespace FifaBet
             try
             {
                 // api link
-                fifaJson = downloader.DownloadString("http://local2host/Project%20fifa/PHP/PHP/api.phpkey=19141945");
+                fifaJson = downloader.DownloadString("http://localhost/Project%20fifa/PHP/PHP/api.php/?key=19141945");
                 List<fifateam> teams = JsonConvert.DeserializeObject<List<fifateam>>(fifaJson);
 
                 // zet de team in een comebox met buhulp van een list
@@ -227,9 +227,14 @@ namespace FifaBet
         //    }
         //}
 
-        private void checkBox1_Click(object sender, EventArgs e)
+        private void saveButton_Click(object sender, EventArgs e)
         {
-            
+            save saveObject = new save();
+            saveObject.Balance = balance.ToString();
+            saveObject.Name = nameLabel.Text;
+           
+            string json = JsonConvert.SerializeObject(saveObject);
+            File.WriteAllText(@"..\json.txt", json);
         }
     }
 }

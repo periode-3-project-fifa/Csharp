@@ -48,6 +48,11 @@ namespace FifaBet
             }
         }
 
+        private void gokkerCreateForm_Load(object sender, EventArgs e)
+        {
+
+        }
+
         /*private void gokkerCreateForm_FormClosing(object sender, FormClosingEventArgs e)
         {
             //zorgt er voor dat je de form niet kan sluiten voordat je een naam heb ingevoerd
