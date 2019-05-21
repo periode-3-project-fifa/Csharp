@@ -233,11 +233,16 @@ namespace FifaBet
             save saveObject = new save();
             saveObject.Balance = balance.ToString();
             saveObject.Name = nameLabel.Text;
-            saveObject.hometeam = radioButtonWinnerTeamOne.Text;
-            saveObject.awayteam = radioButtonWinnerTeamTwo.Text;
+            saveObject.hometeam = radioButtonWinnerTeamOne.ToString();
+            saveObject.awayteam = radioButtonWinnerTeamTwo.ToString();
             saveObject.bets = creditsBet.ToString();
             string json = JsonConvert.SerializeObject(saveObject);
             File.WriteAllText(@"..\json.txt", json);
+        }
+
+        private void comboBoxGames_SelectedIndexChanged(object sender, EventArgs e)
+        {
+        
         }
     }
 }
