@@ -40,56 +40,6 @@ namespace FifaBet
             if(nameLabel.Text == "")
             {
                 this.Close();
-<<<<<<< HEAD
-            }
-            // API
-            System.Net.WebClient downloader = new System.Net.WebClient();
-            string fifaJson;
-
-            try
-            {
-                // api link
-                fifaJson = downloader.DownloadString("http://localhost/Project%20fifa/PHP/PHP/api.php/?key=19141945");
-                List<fifateam> teams = JsonConvert.DeserializeObject<List<fifateam>>(fifaJson);
-
-                // zet de team in een comebox met buhulp van een list
-                foreach (fifateam team in teams)
-                {
-                    comboBoxGames.Items.Add(team);
-                }
-
-            }
-            catch (System.Net.WebException)
-            {
-                // als de api link niet werkt krijg je deze melding
-                MessageBox.Show("er is iets misgegaan");
-            }
-        }
-
-        public void UpdateBalanceLabel()
-        {
-            balanceLabel.Text = String.Format("${0}",this.balance); //Update de label.
-            Debug.WriteLine(String.Format("${0}", this.balance)); // check of de code werkt in de debug!
-        }
-
-        private void nameLabel_DoubleClick(object sender, EventArgs e)
-        {
-            //Deze code actieveert de cheatcode!
-            if( balance == 0)
-            {
-                cheatCodeForm cheatcode = new cheatCodeForm();
-                if(cheatcode.ShowDialog() == DialogResult.OK) //Als de cheatcode goed is voer die deze code uit
-                {
-                    balance = cheatcode.balance;
-                }
-                
-                UpdateBalanceLabel();
-            }
-            else
-            {
-                MessageBox.Show("Je hebt nog genoeg geld!"); //als je geld heb krijg je dit bericht
-            }
-=======
             }
             // API
             System.Net.WebClient downloader = new System.Net.WebClient();
@@ -138,7 +88,6 @@ namespace FifaBet
             {
                 MessageBox.Show("Je hebt nog genoeg geld!"); //als je geld heb krijg je deze bericht
             }
->>>>>>> master
         }
 
         private void buttonBet_Click(object sender, EventArgs e)
@@ -149,7 +98,6 @@ namespace FifaBet
 
         private void placeBet()
         {
-            // TODO:
             getAmountBetCredits();
             if (creditsBet == 0)
             {
@@ -204,23 +152,32 @@ namespace FifaBet
                         ///
                         ///vraag of het goed is
                         /// ||
-                        DialogResult dialogResult = MessageBox.Show("Weet je het zeker", "Some Title", MessageBoxButtons.YesNo);
+                        DialogResult dialogResult = MessageBox.Show("Weet je het zeker", "Zeker?", MessageBoxButtons.YesNo);
                         if (dialogResult == DialogResult.Yes)
                         {
-                            if (radioButtonWinnerTeamOne.Checked)
+                            DialogResult dialog = MessageBox.Show("Ja, heel zeker", "Zeker?", MessageBoxButtons.YesNo);
+                            if (dialog == DialogResult.Yes)
                             {
-                                MessageBox.Show("U heeft " + creditsBet +" Credits op " + nameTeamOne + " ingezet");
+                                if (radioButtonWinnerTeamOne.Checked)
+                                {
+                                    MessageBox.Show("U heeft " + creditsBet + " Credits op " + nameTeamOne + " ingezet");
+                                }
+                                else if (radioButtonWinnerTeamTwo.Checked)
+                                {
+                                    MessageBox.Show("U heeft " + creditsBet + " Credits op " + nameTeamTwo + " ingezet");
+                                }
+                                balance -= creditsBet;
+                                UpdateBalanceLabel();
                             }
-                            else if (radioButtonWinnerTeamTwo.Checked)
+                            else
                             {
-                                MessageBox.Show("U heeft " + creditsBet + " Credits op " + nameTeamTwo + " ingezet");
+                                MessageBox.Show("loser<3");
                             }
-                            balance -= creditsBet;
-                            UpdateBalanceLabel();
+                            
                         }
                         else if (dialogResult == DialogResult.No)
                         {
-                            MessageBox.Show("Oké");
+                            MessageBox.Show("mkayyyyy");
                         }
                     }
                 }
