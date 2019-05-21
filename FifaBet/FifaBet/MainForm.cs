@@ -229,10 +229,13 @@ namespace FifaBet
 
         private void saveButton_Click(object sender, EventArgs e)
         {
+            // Hier maak je een save text bestand aan.
             save saveObject = new save();
             saveObject.Balance = balance.ToString();
             saveObject.Name = nameLabel.Text;
-           
+            saveObject.hometeam = radioButtonWinnerTeamOne.Text;
+            saveObject.awayteam = radioButtonWinnerTeamTwo.Text;
+            saveObject.bets = creditsBet.ToString();
             string json = JsonConvert.SerializeObject(saveObject);
             File.WriteAllText(@"..\json.txt", json);
         }

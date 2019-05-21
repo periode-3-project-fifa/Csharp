@@ -12,8 +12,9 @@ namespace FifaBet
     {
         public string Balance { get; set; }
         public string Name { get; set; }
-        public List<save> hometeam { get; set; }
-        public List<save> awayteam { get; set; }
-        public List<save> bet { get; set; }
+        public string hometeam { get; set; }
+        public string awayteam { get; set; }
+        public string bets { get; set; }
+
     }
 }
