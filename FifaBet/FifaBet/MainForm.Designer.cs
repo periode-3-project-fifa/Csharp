@@ -65,12 +65,13 @@
             // 
             // comboBoxGames
             // 
+            this.comboBoxGames.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comboBoxGames.FormattingEnabled = true;
             this.comboBoxGames.Location = new System.Drawing.Point(108, 76);
             this.comboBoxGames.Name = "comboBoxGames";
             this.comboBoxGames.Size = new System.Drawing.Size(191, 21);
             this.comboBoxGames.TabIndex = 1;
-            this.comboBoxGames.Text = "Choose a match";
+            this.comboBoxGames.SelectedIndexChanged += new System.EventHandler(this.comboBoxGames_SelectedIndexChanged);
             // 
             // label1
             // 
