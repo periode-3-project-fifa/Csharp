@@ -86,7 +86,7 @@ namespace FifaBet
             }
             else
             {
-                MessageBox.Show("Je hebt nog genoeg geld!"); //als je geld heb krijg je deze bericht
+                MessageBox.Show("Je hebt nog genoeg geld!"); //als je geld heb krijg je dit bericht
             }
         }
 
@@ -127,8 +127,7 @@ namespace FifaBet
                     {
                         MessageBox.Show("Je hebt maar " + balance + " Credits, dus niet genoeg om een weddeschap aan te gaan");
                     }
-                    /// ^
-                    /// |
+                    /// ^                    /// |
                     ///Check if the credits you want to bet are more than the amount you have
                     ///yes: Error message || no: place bet
                     ///
