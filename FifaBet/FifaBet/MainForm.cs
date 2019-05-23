@@ -98,7 +98,6 @@ namespace FifaBet
 
         private void placeBet()
         {
-            // TODO:
             getAmountBetCredits();
             if (creditsBet == 0)
             {
@@ -127,8 +126,7 @@ namespace FifaBet
                     {
                         MessageBox.Show("Je hebt maar " + balance + " Credits, dus niet genoeg om een weddeschap aan te gaan");
                     }
-                    /// ^
-                    /// |
+                    /// ^                    /// |
                     ///Check if the credits you want to bet are more than the amount you have
                     ///yes: Error message || no: place bet
                     ///
@@ -154,23 +152,32 @@ namespace FifaBet
                         ///
                         ///vraag of het goed is
                         /// ||
-                        DialogResult dialogResult = MessageBox.Show("Weet je het zeker", "Some Title", MessageBoxButtons.YesNo);
+                        DialogResult dialogResult = MessageBox.Show("Weet je het zeker", "Zeker?", MessageBoxButtons.YesNo);
                         if (dialogResult == DialogResult.Yes)
                         {
-                            if (radioButtonWinnerTeamOne.Checked)
+                            DialogResult dialog = MessageBox.Show("Ja, heel zeker", "Zeker?", MessageBoxButtons.YesNo);
+                            if (dialog == DialogResult.Yes)
                             {
-                                MessageBox.Show("U heeft " + creditsBet +" Credits op " + nameTeamOne + " ingezet");
+                                if (radioButtonWinnerTeamOne.Checked)
+                                {
+                                    MessageBox.Show("U heeft " + creditsBet + " Credits op " + nameTeamOne + " ingezet");
+                                }
+                                else if (radioButtonWinnerTeamTwo.Checked)
+                                {
+                                    MessageBox.Show("U heeft " + creditsBet + " Credits op " + nameTeamTwo + " ingezet");
+                                }
+                                balance -= creditsBet;
+                                UpdateBalanceLabel();
                             }
-                            else if (radioButtonWinnerTeamTwo.Checked)
+                            else
                             {
-                                MessageBox.Show("U heeft " + creditsBet + " Credits op " + nameTeamTwo + " ingezet");
+                                MessageBox.Show("loser<3");
                             }
-                            balance -= creditsBet;
-                            UpdateBalanceLabel();
+                            
                         }
                         else if (dialogResult == DialogResult.No)
                         {
-                            MessageBox.Show("Oké");
+                            MessageBox.Show("mkayyyyy");
                         }
                     }
                 }
@@ -229,12 +236,20 @@ namespace FifaBet
 
         private void saveButton_Click(object sender, EventArgs e)
         {
+            // Hier maak je een save text bestand aan.
             save saveObject = new save();
             saveObject.Balance = balance.ToString();
             saveObject.Name = nameLabel.Text;
-           
+            saveObject.hometeam = radioButtonWinnerTeamOne.ToString();
+            saveObject.awayteam = radioButtonWinnerTeamTwo.ToString();
+            saveObject.bets = creditsBet.ToString();
             string json = JsonConvert.SerializeObject(saveObject);
             File.WriteAllText(@"..\json.txt", json);
+        }
+
+        private void comboBoxGames_SelectedIndexChanged(object sender, EventArgs e)
+        {
+        
         }
     }
 }

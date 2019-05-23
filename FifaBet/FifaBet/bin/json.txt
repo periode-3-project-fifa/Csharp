@@ -1,1 +1,1 @@
-{"Balance":"48","Name":"D","hometeam":null,"awayteam":null,"bet":null}
+{"Balance":"49","Name":"k","hometeam":"System.Windows.Forms.RadioButton, Checked: True","awayteam":"System.Windows.Forms.RadioButton, Checked: False","bets":"1"}
