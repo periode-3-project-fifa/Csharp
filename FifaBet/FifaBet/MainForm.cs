@@ -17,8 +17,10 @@ namespace FifaBet
     public partial class MainForm : Form
     {
         public int balance = 50; // Saldo 
-        int creditsBet = 0; // credits gebet
+        int creditsBet; // credits gebet
+
         string keyCode = "hardcodedkey1234"; //hardkey API
+
         string nameTeamOne;// naam van eerste team home game.
         string nameTeamTwo;// naam van tweede team away game.
 
@@ -34,7 +36,9 @@ namespace FifaBet
         {
             //deze laat je naam zien op je gok applicatie
             gokkerCreateForm newProfiel = new gokkerCreateForm();
+
             newProfiel.ShowDialog();
+
             nameLabel.Text = newProfiel.naam;
 
             if (nameLabel.Text == "")
@@ -43,6 +47,7 @@ namespace FifaBet
             }
             // API
             System.Net.WebClient downloader = new System.Net.WebClient();
+
             string fifaJson;
 
             try
@@ -67,6 +72,7 @@ namespace FifaBet
         public void UpdateBalanceLabel()
         {
             balanceLabel.Text = String.Format("${0}", this.balance); //Update de label.
+
             Debug.WriteLine(String.Format("${0}", this.balance)); // check of de code werkt in de debug!
         }
 
@@ -76,6 +82,7 @@ namespace FifaBet
             if (balance == 0)
             {
                 cheatCodeForm cheatcode = new cheatCodeForm();
+
                 if (cheatcode.ShowDialog() == DialogResult.OK) //Als de cheatcode goed is voer die deze code uit
                 {
                     balance = cheatcode.balance;
@@ -98,6 +105,7 @@ namespace FifaBet
         private void placeBet()
         {
             getAmountBetCredits();
+
             if (creditsBet == 0)
             {
                 MessageBox.Show("Zet altublieft een hoger aantal credits in");
@@ -117,10 +125,12 @@ namespace FifaBet
                     {
                         MessageBox.Show("Je hebt maar " + balance + " Credit, dus niet genoeg om een weddeschap aan te gaan");
                     }
+
                     else if (balance == 0)
                     {
                         MessageBox.Show("Je hebt geen Credits dus niet genoeg om een weddeschap aan te gaan");
                     }
+
                     else
                     {
                         MessageBox.Show("Je hebt maar " + balance + " Credits, dus niet genoeg om een weddeschap aan te gaan");
@@ -158,11 +168,14 @@ namespace FifaBet
                             {
                                 MessageBox.Show("U heeft " + creditsBet + " Credits op " + nameTeamOne + " ingezet");
                             }
+
                             else if (radioButtonWinnerTeamTwo.Checked)
                             {
                                 MessageBox.Show("U heeft " + creditsBet + " Credits op " + nameTeamTwo + " ingezet");
                             }
+
                             balance -= creditsBet;
+
                             UpdateBalanceLabel();
                         }
                         else if (dialogResult == DialogResult.No)
@@ -210,23 +223,27 @@ namespace FifaBet
         {
             // Hier maak je een save text bestand aan.
             save saveObject = new save();
+
             saveObject.Balance = balance.ToString();
             saveObject.Name = nameLabel.Text;
             saveObject.hometeam = radioButtonWinnerTeamOne.ToString();
             saveObject.awayteam = radioButtonWinnerTeamTwo.ToString();
             saveObject.bets = creditsBet.ToString();
+
             string json = JsonConvert.SerializeObject(saveObject);
+
             File.WriteAllText(@"..\json.txt", json);
         }
 
         private void comboBoxGames_SelectedIndexChanged(object sender, EventArgs e)
         {
             //het splitten van de teams waardoor de text van de teams op de radiobuttons komt
-            string splitt = ",";
-            char split = splitt[0];
-            string[] splitted = comboBoxGames.Text.Split(split);
+            string splitBy = ",";
+            string[] splitted = comboBoxGames.Text.Split(splitBy[0]);
+
             nameTeamOne = splitted[0];
             nameTeamTwo = splitted[1];
+
             updateTeamLabels();
         }
 
@@ -235,6 +252,9 @@ namespace FifaBet
             //update de radiobuttons met de team namen
             radioButtonWinnerTeamOne.Text = nameTeamOne;
             radioButtonWinnerTeamTwo.Text = nameTeamTwo;
+
+            labelTeamOne.Text = nameTeamOne;
+            labelTeamTwo.Text = nameTeamTwo;
         }
     }
 }

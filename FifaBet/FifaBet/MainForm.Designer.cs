@@ -197,9 +197,9 @@
             this.nameLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.nameLabel.Location = new System.Drawing.Point(78, 14);
             this.nameLabel.Name = "nameLabel";
-            this.nameLabel.Size = new System.Drawing.Size(47, 15);
+            this.nameLabel.Size = new System.Drawing.Size(45, 15);
             this.nameLabel.TabIndex = 16;
-            this.nameLabel.Text = "label3";
+            this.nameLabel.Text = "Name";
             this.nameLabel.DoubleClick += new System.EventHandler(this.nameLabel_DoubleClick);
             // 
             // choseTeamGroupBox
