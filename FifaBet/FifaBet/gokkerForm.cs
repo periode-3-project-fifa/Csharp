@@ -53,6 +53,13 @@ namespace FifaBet
 
         }
 
+        private void GokkerBtn_Click(object sender, EventArgs e)
+        {
+
+            GokkersSelect gokkers = new GokkersSelect();
+            gokkers.ShowDialog();
+        }
+
         /*private void gokkerCreateForm_FormClosing(object sender, FormClosingEventArgs e)
         {
             //zorgt er voor dat je de form niet kan sluiten voordat je een naam heb ingevoerd

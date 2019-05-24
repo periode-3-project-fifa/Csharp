@@ -15,6 +15,5 @@ namespace FifaBet
         public string hometeam { get; set; }
         public string awayteam { get; set; }
         public string bets { get; set; }
-
     }
 }
