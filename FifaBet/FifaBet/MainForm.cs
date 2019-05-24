@@ -18,7 +18,7 @@ namespace FifaBet
     {
         public int balance = 50; // Saldo 
         int creditsBet = 0; // credits gebet
-        string keyCode = "19141945"; //hardkey API
+        string keyCode = "hardcodedkey1234"; //hardkey API
         string nameTeamOne = "Team1";// naam van eerste team home game.
         string nameTeamTwo = "Team2";// naam van tweede team away game.
         
@@ -48,7 +48,7 @@ namespace FifaBet
             try
             {
                 // api link
-                fifaJson = downloader.DownloadString("http://localhost/Project%20fifa/PHP/PHP/api.php/?key=19141945");
+                fifaJson = downloader.DownloadString("http://localhost/Proj_fifa/PHP/PHP/api.php/?key=hardcodedkey1234");
                 List<fifateam> teams = JsonConvert.DeserializeObject<List<fifateam>>(fifaJson);
 
                 // zet de team in een comebox met buhulp van een list
