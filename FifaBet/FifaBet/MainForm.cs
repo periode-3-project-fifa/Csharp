@@ -48,7 +48,7 @@ namespace FifaBet
             try
             {
                 // api link
-                fifaJson = downloader.DownloadString("http://localhost/Proj_fifa/PHP/PHP/api.php/?key=hardcodedkey1234");
+                fifaJson = downloader.DownloadString("http://localhost/Voetbal_app/PHP/PHP/api.php/?key=hardcodedkey1234");
                 List<fifateam> teams = JsonConvert.DeserializeObject<List<fifateam>>(fifaJson);
 
                 // zet de team in een comebox met buhulp van een list
@@ -56,7 +56,6 @@ namespace FifaBet
                 {
                     comboBoxGames.Items.Add(team);
                 }
-
             }
             catch (System.Net.WebException)
             {
@@ -249,7 +248,20 @@ namespace FifaBet
 
         private void comboBoxGames_SelectedIndexChanged(object sender, EventArgs e)
         {
-        
+            string splitt = ",";
+            char split = splitt[0];
+            string[] splitted = comboBoxGames.Text.Split(split);
+            nameTeamOne = splitted[0];
+            nameTeamTwo = splitted[1];
+            updateTeamLabels();
+            /*foreach (fifateam team in teams)
+            radioButtonWinnerTeamOne.Text = team.home;*/
+        }
+
+        private void updateTeamLabels()
+        {
+            radioButtonWinnerTeamOne.Text = nameTeamOne;
+            radioButtonWinnerTeamTwo.Text = nameTeamTwo;
         }
     }
 }

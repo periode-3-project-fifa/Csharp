@@ -25,9 +25,7 @@ namespace FifaBet
             hih[0] = "si";
             hih[1] = "no";
 
-            //List<save> save = JsonConvert.DeserializeObject<List<save>>(Json);
 
-            GokkersListBox.Items.AddRange(hih);
         }
     }
 }

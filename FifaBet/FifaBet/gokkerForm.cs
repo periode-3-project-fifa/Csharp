@@ -26,11 +26,12 @@ namespace FifaBet
             //daarna als je naam heeft ingevuld krijg je een welkom bericht en sluit deze form.
             if(string.IsNullOrEmpty(nameTextBox.Text))
             {
-                MessageBox.Show("voer een naam in");
+                MessageBox.Show("Voer een naam in");
             }
             else
             {
                 naam = nameTextBox.Text;
+
 
                 MessageBox.Show("Welkom" + " " + naam);
 
