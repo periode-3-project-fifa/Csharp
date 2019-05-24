@@ -86,9 +86,24 @@
             // numericUpDownBet
             // 
             this.numericUpDownBet.Location = new System.Drawing.Point(126, 171);
+            this.numericUpDownBet.Maximum = new decimal(new int[] {
+            50,
+            0,
+            0,
+            0});
+            this.numericUpDownBet.Minimum = new decimal(new int[] {
+            5,
+            0,
+            0,
+            0});
             this.numericUpDownBet.Name = "numericUpDownBet";
             this.numericUpDownBet.Size = new System.Drawing.Size(54, 20);
             this.numericUpDownBet.TabIndex = 3;
+            this.numericUpDownBet.Value = new decimal(new int[] {
+            5,
+            0,
+            0,
+            0});
             // 
             // labelBetCredits
             // 
