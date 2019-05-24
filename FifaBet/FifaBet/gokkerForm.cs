@@ -33,6 +33,7 @@ namespace FifaBet
                 naam = nameTextBox.Text;
 
 
+
                 MessageBox.Show("Welkom" + " " + naam);
 
                 this.Close();

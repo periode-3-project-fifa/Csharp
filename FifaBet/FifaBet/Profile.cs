@@ -9,5 +9,7 @@ namespace FifaBet
     class Profile
     {
         public string Username { get; set; }
+        public int Balance { get; set; }
+        public Bet 
     }
 }

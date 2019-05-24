@@ -8,6 +8,14 @@ namespace FifaBet
 {
     class Bet
     {
+        public int BetAmount { get; set; }
+        public string Team { get; set; }
+        public int[] Score { get; set; }
+
+        public void Newbet(int betamount, string team, int[] score)
+        {
+
+        }
         /*public int Amount { get; set; }
         public int Guy { get; set; }
 
