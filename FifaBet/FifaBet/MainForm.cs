@@ -16,6 +16,9 @@ namespace FifaBet
 {
     public partial class MainForm : Form
     {
+        public string NaamInzet;
+        public int Inzet;
+
         public fifateam hometeam;
         public fifateam awayteam;
         
@@ -61,7 +64,7 @@ namespace FifaBet
             {
                 // api link
 
-                fifaJson = downloader.DownloadString("http://localhost/Project%20fifa/PHP/PHP/api.php/?key=hardcodedkey1234");
+                fifaJson = downloader.DownloadString("http://localhost/Proj_fifa/PHP/PHP/api.php/?key=hardcodedkey1234");
 
                 List<fifateam> teams = JsonConvert.DeserializeObject<List<fifateam>>(fifaJson);
                 // zet de team in een comebox met buhulp van een list
@@ -276,7 +279,7 @@ namespace FifaBet
             if (hometeam.homescore > awayteam.awayscore)
             {
                 MessageBox.Show("Je hebt gewonnen");
-                balance 
+                creditsBet *= 2;
                 UpdateBalanceLabel();
             }
             else
