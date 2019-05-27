@@ -16,6 +16,9 @@ namespace FifaBet
 {
     public partial class MainForm : Form
     {
+        public fifateam fifateam;
+        int endscore;
+
         public int balance = 50; // Saldo 
         int creditsBet; // credits gebet
 
@@ -27,7 +30,6 @@ namespace FifaBet
         public MainForm()
         {
             InitializeComponent();
-            // checkBox1.Text = "Unchecked"; // voor lol
             UpdateBalanceLabel(); //update de label.
 
         }
@@ -53,7 +55,7 @@ namespace FifaBet
             try
             {
                 // api link
-                fifaJson = downloader.DownloadString("http://localhost/Project%20fifa/PHP/PHP/api.php/?key=hardcodedkey1234");
+                fifaJson = downloader.DownloadString("http://localhost/Proj_fifa/PHP/PHP/api.php/?key=hardcodedkey1234");
                 List<fifateam> teams = JsonConvert.DeserializeObject<List<fifateam>>(fifaJson);
 
                 // zet de team in een comebox met buhulp van een list
@@ -178,10 +180,7 @@ namespace FifaBet
 
                             UpdateBalanceLabel();
                         }
-                        else if (dialogResult == DialogResult.No)
-                        {
-                            MessageBox.Show("mkayyyyy");
-                        }
+                     
                     }
                 }
             }
@@ -255,6 +254,27 @@ namespace FifaBet
 
             labelTeamOne.Text = nameTeamOne;
             labelTeamTwo.Text = nameTeamTwo;
+        }
+
+        private void buttonPayOut_Click(object sender, EventArgs e)
+        {
+            payOut();
+        }
+
+        public int payOut()
+        {
+           // fifateam = endscore;
+            if (fifateam.homescore > fifateam.awayscore)
+            {
+                MessageBox.Show("Je hebt gewonnen");
+                UpdateBalanceLabel();
+                return balance += creditsBet * 2;
+            }
+            else
+            {
+                return 0;
+            }
+       
         }
     }
 }

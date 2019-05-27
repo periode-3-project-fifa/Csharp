@@ -46,6 +46,7 @@
             this.radioButtonWinnerTeamTwo = new System.Windows.Forms.RadioButton();
             this.radioButtonWinnerTeamOne = new System.Windows.Forms.RadioButton();
             this.saveButton = new System.Windows.Forms.Button();
+            this.buttonPayOut = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDownBet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown2)).BeginInit();
@@ -245,11 +246,23 @@
             this.saveButton.UseVisualStyleBackColor = true;
             this.saveButton.Click += new System.EventHandler(this.saveButton_Click);
             // 
+            // buttonPayOut
+            // 
+            this.buttonPayOut.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buttonPayOut.Location = new System.Drawing.Point(190, 470);
+            this.buttonPayOut.Name = "buttonPayOut";
+            this.buttonPayOut.Size = new System.Drawing.Size(118, 23);
+            this.buttonPayOut.TabIndex = 19;
+            this.buttonPayOut.Text = "Uitbetalen";
+            this.buttonPayOut.UseVisualStyleBackColor = true;
+            this.buttonPayOut.Click += new System.EventHandler(this.buttonPayOut_Click);
+            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(422, 497);
+            this.Controls.Add(this.buttonPayOut);
             this.Controls.Add(this.saveButton);
             this.Controls.Add(this.choseTeamGroupBox);
             this.Controls.Add(this.nameLabel);
@@ -297,6 +310,7 @@
         private System.Windows.Forms.RadioButton radioButtonWinnerTeamTwo;
         private System.Windows.Forms.RadioButton radioButtonWinnerTeamOne;
         private System.Windows.Forms.Button saveButton;
+        private System.Windows.Forms.Button buttonPayOut;
     }
 }
 
