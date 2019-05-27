@@ -16,22 +16,24 @@ namespace FifaBet
 {
     public partial class MainForm : Form
     {
-        public fifateam fifateam;
-        int endscore;
+        public fifateam hometeam;
+        public fifateam awayteam;
+        
 
         public int balance = 50; // Saldo 
         int creditsBet; // credits gebet
 
-        string keyCode = "hardcodedkey1234"; //hardkey API
-
         string nameTeamOne;// naam van eerste team home game.
         string nameTeamTwo;// naam van tweede team away game.
+
+        string fifaJson;
+        
 
         public MainForm()
         {
             InitializeComponent();
             UpdateBalanceLabel(); //update de label.
-
+            API();
         }
 
         private void MainForm_Load(object sender, EventArgs e)
@@ -47,18 +49,23 @@ namespace FifaBet
             {
                 this.Close();
             }
-            // API
-            System.Net.WebClient downloader = new System.Net.WebClient();
 
-            string fifaJson;
+
+        }
+
+        public void API()
+        {
+            System.Net.WebClient downloader = new System.Net.WebClient();
 
             try
             {
                 // api link
-                fifaJson = downloader.DownloadString("http://localhost/Proj_fifa/PHP/PHP/api.php/?key=hardcodedkey1234");
-                List<fifateam> teams = JsonConvert.DeserializeObject<List<fifateam>>(fifaJson);
 
+                fifaJson = downloader.DownloadString("http://localhost/Project%20fifa/PHP/PHP/api.php/?key=hardcodedkey1234");
+
+                List<fifateam> teams = JsonConvert.DeserializeObject<List<fifateam>>(fifaJson);
                 // zet de team in een comebox met buhulp van een list
+
                 foreach (fifateam team in teams)
                 {
                     comboBoxGames.Items.Add(team);
@@ -67,6 +74,7 @@ namespace FifaBet
             catch (System.Net.WebException)
             {
                 // als de api link niet werkt krijg je deze melding
+
                 MessageBox.Show("er is iets misgegaan");
             }
         }
@@ -261,18 +269,19 @@ namespace FifaBet
             payOut();
         }
 
-        public int payOut()
+        public void payOut()
         {
-           // fifateam = endscore;
-            if (fifateam.homescore > fifateam.awayscore)
+            hometeam = new fifateam(4, 1);
+            awayteam = new fifateam(4, 1);
+            if (hometeam.homescore > awayteam.awayscore)
             {
                 MessageBox.Show("Je hebt gewonnen");
+                balance 
                 UpdateBalanceLabel();
-                return balance += creditsBet * 2;
             }
             else
             {
-                return 0;
+                balance = 0;
             }
        
         }

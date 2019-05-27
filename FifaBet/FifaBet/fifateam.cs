@@ -17,10 +17,10 @@ namespace FifaBet
 
         public fifateam(int HomeScore, int AwayScore)
         {
+            
             this.homescore = HomeScore;
             this.awayscore = AwayScore;
         }
-
 
         public override string ToString()
         {
