@@ -27,5 +27,10 @@ namespace FifaBet
 
 
         }
+
+        private void GokkersListBox_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }

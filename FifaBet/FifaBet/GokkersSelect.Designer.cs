@@ -39,6 +39,7 @@
             this.GokkersListBox.Name = "GokkersListBox";
             this.GokkersListBox.Size = new System.Drawing.Size(237, 394);
             this.GokkersListBox.TabIndex = 0;
+            this.GokkersListBox.SelectedIndexChanged += new System.EventHandler(this.GokkersListBox_SelectedIndexChanged);
             // 
             // button1
             // 
