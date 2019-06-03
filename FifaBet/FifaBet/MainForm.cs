@@ -16,9 +16,6 @@ namespace FifaBet
 {
     public partial class MainForm : Form
     {
-        public string NaamInzet;
-        public int Inzet;
-
         public List<fifateam> teams;
 
         public fifateam hometeam;
@@ -26,7 +23,7 @@ namespace FifaBet
         
 
         public int balance = 50; // Saldo 
-        int creditsBet; // credits gebet
+        public int creditsBet; // credits gebet
 
         string nameTeamOne;// naam van eerste team home game.
         string nameTeamTwo;// naam van tweede team away game.
@@ -278,12 +275,9 @@ namespace FifaBet
 
         public void payOut()
         {
-            //hometeam = new fifateam(Inzet,hometeam.homescore);
-            //awayteam = new fifateam(Inzet,awayteam.awayscore);
-
             foreach (fifateam team in teams)
             {
-                string winningTeam = "";
+                string winningTeam = " ";
                 
                 if (team.awayscore > team.homescore)
                 {
@@ -296,31 +290,32 @@ namespace FifaBet
                 else
                 {
                     // score is gelijk
+                }
+
+                if(team.awayscore == numericUpDown2.Value && team.homescore == numericUpDown1.Value)
+                {
+                    MessageBox.Show(winningTeam + " heeft gewonnen");
+                    balance += creditsBet * 3;
+                    UpdateBalanceLabel();
+                    Debug.WriteLine(String.Format("${0}", this.creditsBet)); // check of de code werkt in de debug!
 
                 }
 
                 if (winningTeam == nameTeamOne)
                 {
-                    MessageBox.Show(winningTeam + "heeft gewonnen");
+                    MessageBox.Show(winningTeam + " heeft gewonnen");
+                    balance += creditsBet *2;
+                    UpdateBalanceLabel();
+                    Debug.WriteLine(String.Format("${0}", this.creditsBet)); // check of de code werkt in de debug!
+
                 }
                 else if (winningTeam == nameTeamTwo)
                 {
-                    MessageBox.Show(winningTeam + "heeft gewonnen");
+                    MessageBox.Show(winningTeam + " heeft gewonnen");
+                    balance += creditsBet * 2;
+                    UpdateBalanceLabel();
                 }
             }
-
-            if (hometeam.homescore > awayteam.awayscore)
-            {
-                
-                MessageBox.Show("Je hebt gewonnen");
-                creditsBet *= 2;
-                UpdateBalanceLabel();
-            }
-            else
-            {
-                balance = 0;
-            }
-       
         }
     }
 }
