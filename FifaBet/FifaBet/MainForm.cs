@@ -29,13 +29,15 @@ namespace FifaBet
         string nameTeamTwo;// naam van tweede team away game.
 
         string fifaJson; // roep de api aan
-        
 
+
+        
         public MainForm()
         {
             InitializeComponent();
             UpdateBalanceLabel(); //update de label.
             API(); // update de api
+
         }
 
         private void MainForm_Load(object sender, EventArgs e)
@@ -63,7 +65,7 @@ namespace FifaBet
             {
                 // api link
 
-                fifaJson = downloader.DownloadString("http://localhost/Project%20fifa/PHP/PHP/api.php/?key=hardcodedkey1234");
+                fifaJson = downloader.DownloadString("http://localhost/Proj_fifa/PHP/PHP/api.php/?key=hardcodedkey1234");
 
                 teams = JsonConvert.DeserializeObject<List<fifateam>>(fifaJson);
                 // zet de team in een comebox met buhulp van een list
@@ -110,7 +112,7 @@ namespace FifaBet
 
         private void buttonBet_Click(object sender, EventArgs e)
         {
-            //hier plaats hij deze bed.
+            //hier plaats hij deze bet.
             placeBet();
         }
 
@@ -154,18 +156,20 @@ namespace FifaBet
                 }
                 else
                 {
-                    if (!radioButtonWinnerTeamOne.Checked && !radioButtonWinnerTeamTwo.Checked)
+                    if (checkBoxWinnerTeamOne.Checked && checkBoxWinnerTeamTwo.Checked)
                     {
-                        MessageBox.Show("Selecteer een team alstublieft");
+                        MessageBox.Show("");
                     }
+                    
                     /// ^^
                     /// ||
                     ///Check if what team team 1 and 2 are
                     ///Check what team is selected to win
                     else
                     {
-                        int pointsTeamOne = (int)numericUpDown1.Value;
-                        int pointsTeamtwo = (int)numericUpDown2.Value;
+                        int pointsTeamOne = (int)numericUpDownHomeTeam.Value;
+                        int pointsTeamtwo = (int)numericUpDownAwayTeam.Value;
+                        buttonPayOut.Enabled = true;
                         /// ^^
                         /// ||
                         ///Check how much points team 1 gets
@@ -176,21 +180,24 @@ namespace FifaBet
                         DialogResult dialogResult = MessageBox.Show("Weet je het zeker", "Zeker?", MessageBoxButtons.YesNo);
                         if (dialogResult == DialogResult.Yes)
                         {
-                            if (radioButtonWinnerTeamOne.Checked)
+                            if (checkBoxWinnerTeamOne.Checked)
                             {
                                 MessageBox.Show("U heeft " + creditsBet + " Credits op " + nameTeamOne + " ingezet");
+                                buttonPayOut.Enabled = true;
                                 //Inzet = hometeam.homescore;
                             }
 
-                            else if (radioButtonWinnerTeamTwo.Checked)
+                            else if (checkBoxWinnerTeamTwo.Checked)
                             {
                                 MessageBox.Show("U heeft " + creditsBet + " Credits op " + nameTeamTwo + " ingezet");
+                                buttonPayOut.Enabled = true;
                                 //Inzet = awayteam.awayscore;
                             }
 
                             balance -= creditsBet;
 
                             UpdateBalanceLabel();
+
                         }
                      
                     }
@@ -226,8 +233,8 @@ namespace FifaBet
         private void checkScores()
         {
             //kijk wat de speler heeft ingevuld in de scorebord.
-            int teamOnePoints = (int)numericUpDown1.Value;
-            int teamTwoPoints = (int)numericUpDown2.Value;
+            int teamOnePoints = (int)numericUpDownHomeTeam.Value;
+            int teamTwoPoints = (int)numericUpDownAwayTeam.Value;
         }
 
         private void saveButton_Click(object sender, EventArgs e)
@@ -237,8 +244,8 @@ namespace FifaBet
 
             saveObject.Balance = balance.ToString();
             saveObject.Name = nameLabel.Text;
-            saveObject.hometeam = radioButtonWinnerTeamOne.ToString();
-            saveObject.awayteam = radioButtonWinnerTeamTwo.ToString();
+            saveObject.hometeam = checkBoxWinnerTeamOne.ToString();
+            saveObject.awayteam = checkBoxWinnerTeamTwo.ToString();
             saveObject.bets = creditsBet.ToString();
 
             string json = JsonConvert.SerializeObject(saveObject);
@@ -261,8 +268,8 @@ namespace FifaBet
         private void updateTeamLabels()
         {
             //update de radiobuttons met de team namen
-            radioButtonWinnerTeamOne.Text = nameTeamOne;
-            radioButtonWinnerTeamTwo.Text = nameTeamTwo;
+            checkBoxWinnerTeamOne.Text = nameTeamOne;
+            checkBoxWinnerTeamTwo.Text = nameTeamTwo;
 
             labelTeamOne.Text = nameTeamOne;
             labelTeamTwo.Text = nameTeamTwo;
@@ -277,8 +284,8 @@ namespace FifaBet
         {
             foreach (fifateam team in teams)
             {
-                string winningTeam = " ";
-                
+                string winningTeam = "";
+
                 if (team.awayscore > team.homescore)
                 {
                     winningTeam = team.away;
@@ -286,10 +293,6 @@ namespace FifaBet
                 else if (team.awayscore < team.homescore)
                 {
                     winningTeam = team.home;
-                }
-                else
-                {
-                    // score is gelijk
                 }
 
                 if(team.awayscore == numericUpDown2.Value && team.homescore == numericUpDown1.Value)
@@ -308,14 +311,91 @@ namespace FifaBet
                     UpdateBalanceLabel();
                     Debug.WriteLine(String.Format("${0}", this.creditsBet)); // check of de code werkt in de debug!
 
+                    MessageBox.Show(winningTeam + "heeft gewonnen");
+
+                    if (team.awayscore == numericUpDownAwayTeam.Value && team.homescore == numericUpDownHomeTeam.Value)
+                    {
+                        creditsBet *= 3;
+                        balance += creditsBet;
+                        UpdateBalanceLabel();
+                        buttonPayOut.Enabled = false;
+                        return;
+                    }
+                    else if (checkBoxWinnerTeamOne.Checked)
+                    {
+                        creditsBet *= 2;
+                        balance += creditsBet;
+                        UpdateBalanceLabel();
+                        buttonPayOut.Enabled = false;
+                    }
+
                 }
                 else if (winningTeam == nameTeamTwo)
                 {
                     MessageBox.Show(winningTeam + " heeft gewonnen");
                     balance += creditsBet * 2;
                     UpdateBalanceLabel();
+                    MessageBox.Show(winningTeam + "heeft gewonnen");
+
+                    if (team.awayscore == numericUpDownAwayTeam.Value && team.homescore == numericUpDownHomeTeam.Value)
+                    {
+                        creditsBet *= 3;
+                        balance += creditsBet;
+                        UpdateBalanceLabel();
+                        buttonPayOut.Enabled = false;
+                        return;
+                    }
+                    else if (checkBoxWinnerTeamTwo.Checked)
+                    {
+                        creditsBet *= 2;
+                        balance += creditsBet;
+                        UpdateBalanceLabel();
+                        buttonPayOut.Enabled = false;
+                    }
                 }
+
+                 
+                 else if (team.awayscore != numericUpDownAwayTeam.Value && team.homescore != numericUpDownHomeTeam.Value)
+                 {
+                    MessageBox.Show("Je hebt niet de juiste score ingevuld");
+                     return;
+                 }
             }
+        }
+
+        private void groupBoxRightScore_Enter(object sender, EventArgs e)
+        {
+            if (checkBoxWinnerTeamOne.Checked || checkBoxWinnerTeamTwo.Checked)
+            {
+                groupBoxRightScore.Enabled = false;
+                return;
+            }
+        }
+
+        private void choseTeamGroupBox_Enter(object sender, EventArgs e)
+        {
+            if (numericUpDownHomeTeam.Value > 1 || numericUpDownAwayTeam.Value > 1)
+            {
+                choseTeamGroupBox.Enabled = false;
+                return;
+            }
+        }
+
+        private void checkBoxWinnerTeamTwo_CheckedChanged(object sender, EventArgs e)
+        {
+            if (checkBoxWinnerTeamOne.Checked)
+            {
+                checkBoxWinnerTeamOne.Checked = false;
+            }
+        }
+
+        private void checkBoxWinnerTeamOne_CheckedChanged(object sender, EventArgs e)
+        {
+            if (checkBoxWinnerTeamTwo.Checked)
+            {
+                checkBoxWinnerTeamTwo.Checked = false;
+            }
+
         }
     }
 }
