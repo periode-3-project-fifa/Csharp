@@ -19,6 +19,8 @@ namespace FifaBet
         public string NaamInzet;
         public int Inzet;
 
+        public List<fifateam> teams;
+
         public fifateam hometeam;
         public fifateam awayteam;
         
@@ -29,14 +31,14 @@ namespace FifaBet
         string nameTeamOne;// naam van eerste team home game.
         string nameTeamTwo;// naam van tweede team away game.
 
-        string fifaJson;
+        string fifaJson; // roep de api aan
         
 
         public MainForm()
         {
             InitializeComponent();
             UpdateBalanceLabel(); //update de label.
-            API();
+            API(); // update de api
         }
 
         private void MainForm_Load(object sender, EventArgs e)
@@ -64,9 +66,9 @@ namespace FifaBet
             {
                 // api link
 
-                fifaJson = downloader.DownloadString("http://localhost/Proj_fifa/PHP/PHP/api.php/?key=hardcodedkey1234");
+                fifaJson = downloader.DownloadString("http://localhost/Project%20fifa/PHP/PHP/api.php/?key=hardcodedkey1234");
 
-                List<fifateam> teams = JsonConvert.DeserializeObject<List<fifateam>>(fifaJson);
+                teams = JsonConvert.DeserializeObject<List<fifateam>>(fifaJson);
                 // zet de team in een comebox met buhulp van een list
 
                 foreach (fifateam team in teams)
@@ -180,11 +182,13 @@ namespace FifaBet
                             if (radioButtonWinnerTeamOne.Checked)
                             {
                                 MessageBox.Show("U heeft " + creditsBet + " Credits op " + nameTeamOne + " ingezet");
+                                //Inzet = hometeam.homescore;
                             }
 
                             else if (radioButtonWinnerTeamTwo.Checked)
                             {
                                 MessageBox.Show("U heeft " + creditsBet + " Credits op " + nameTeamTwo + " ingezet");
+                                //Inzet = awayteam.awayscore;
                             }
 
                             balance -= creditsBet;
@@ -274,10 +278,40 @@ namespace FifaBet
 
         public void payOut()
         {
-            hometeam = new fifateam(4, 1);
-            awayteam = new fifateam(4, 1);
+            //hometeam = new fifateam(Inzet,hometeam.homescore);
+            //awayteam = new fifateam(Inzet,awayteam.awayscore);
+
+            foreach (fifateam team in teams)
+            {
+                string winningTeam = "";
+                
+                if (team.awayscore > team.homescore)
+                {
+                    winningTeam = team.away;
+                }
+                else if (team.awayscore < team.homescore)
+                {
+                    winningTeam = team.home;
+                }
+                else
+                {
+                    // score is gelijk
+
+                }
+
+                if (winningTeam == nameTeamOne)
+                {
+                    MessageBox.Show(winningTeam + "heeft gewonnen");
+                }
+                else if (winningTeam == nameTeamTwo)
+                {
+                    MessageBox.Show(winningTeam + "heeft gewonnen");
+                }
+            }
+
             if (hometeam.homescore > awayteam.awayscore)
             {
+                
                 MessageBox.Show("Je hebt gewonnen");
                 creditsBet *= 2;
                 UpdateBalanceLabel();
