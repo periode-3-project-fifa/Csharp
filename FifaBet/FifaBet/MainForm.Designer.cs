@@ -45,8 +45,8 @@
             this.choseTeamGroupBox = new System.Windows.Forms.GroupBox();
             this.saveButton = new System.Windows.Forms.Button();
             this.buttonPayOut = new System.Windows.Forms.Button();
-            this.checkBoxWinnerTeamOne = new System.Windows.Forms.CheckBox();
-            this.checkBoxWinnerTeamTwo = new System.Windows.Forms.CheckBox();
+            this.radioButtonWinnerTeamOne = new System.Windows.Forms.RadioButton();
+            this.radioButtonWinnerTeamTwo = new System.Windows.Forms.RadioButton();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDownBet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDownHomeTeam)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDownAwayTeam)).BeginInit();
@@ -78,7 +78,7 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(172, 144);
+            this.label1.Location = new System.Drawing.Point(168, 124);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(54, 24);
             this.label1.TabIndex = 2;
@@ -86,7 +86,7 @@
             // 
             // numericUpDownBet
             // 
-            this.numericUpDownBet.Location = new System.Drawing.Point(126, 171);
+            this.numericUpDownBet.Location = new System.Drawing.Point(121, 151);
             this.numericUpDownBet.Maximum = new decimal(new int[] {
             50,
             0,
@@ -110,7 +110,7 @@
             // 
             this.labelBetCredits.AutoSize = true;
             this.labelBetCredits.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelBetCredits.Location = new System.Drawing.Point(200, 171);
+            this.labelBetCredits.Location = new System.Drawing.Point(200, 151);
             this.labelBetCredits.Name = "labelBetCredits";
             this.labelBetCredits.Size = new System.Drawing.Size(59, 20);
             this.labelBetCredits.TabIndex = 4;
@@ -206,9 +206,9 @@
             // 
             // choseTeamGroupBox
             // 
-            this.choseTeamGroupBox.Controls.Add(this.checkBoxWinnerTeamTwo);
-            this.choseTeamGroupBox.Controls.Add(this.checkBoxWinnerTeamOne);
-            this.choseTeamGroupBox.Location = new System.Drawing.Point(108, 210);
+            this.choseTeamGroupBox.Controls.Add(this.radioButtonWinnerTeamTwo);
+            this.choseTeamGroupBox.Controls.Add(this.radioButtonWinnerTeamOne);
+            this.choseTeamGroupBox.Location = new System.Drawing.Point(108, 193);
             this.choseTeamGroupBox.Name = "choseTeamGroupBox";
             this.choseTeamGroupBox.Size = new System.Drawing.Size(200, 100);
             this.choseTeamGroupBox.TabIndex = 17;
@@ -218,7 +218,7 @@
             // 
             // saveButton
             // 
-            this.saveButton.Location = new System.Drawing.Point(108, 470);
+            this.saveButton.Location = new System.Drawing.Point(184, 14);
             this.saveButton.Name = "saveButton";
             this.saveButton.Size = new System.Drawing.Size(75, 23);
             this.saveButton.TabIndex = 18;
@@ -230,35 +230,35 @@
             // 
             this.buttonPayOut.Enabled = false;
             this.buttonPayOut.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.buttonPayOut.Location = new System.Drawing.Point(190, 470);
+            this.buttonPayOut.Location = new System.Drawing.Point(108, 470);
             this.buttonPayOut.Name = "buttonPayOut";
-            this.buttonPayOut.Size = new System.Drawing.Size(118, 23);
+            this.buttonPayOut.Size = new System.Drawing.Size(200, 23);
             this.buttonPayOut.TabIndex = 19;
             this.buttonPayOut.Text = "Uitbetalen";
             this.buttonPayOut.UseVisualStyleBackColor = true;
             this.buttonPayOut.Click += new System.EventHandler(this.buttonPayOut_Click);
             // 
-            // checkBoxWinnerTeamOne
+            // radioButtonWinnerTeamOne
             // 
-            this.checkBoxWinnerTeamOne.AutoSize = true;
-            this.checkBoxWinnerTeamOne.Location = new System.Drawing.Point(7, 64);
-            this.checkBoxWinnerTeamOne.Name = "checkBoxWinnerTeamOne";
-            this.checkBoxWinnerTeamOne.Size = new System.Drawing.Size(80, 17);
-            this.checkBoxWinnerTeamOne.TabIndex = 2;
-            this.checkBoxWinnerTeamOne.Text = "checkBox1";
-            this.checkBoxWinnerTeamOne.UseVisualStyleBackColor = true;
-            this.checkBoxWinnerTeamOne.CheckedChanged += new System.EventHandler(this.checkBoxWinnerTeamOne_CheckedChanged);
+            this.radioButtonWinnerTeamOne.AutoSize = true;
+            this.radioButtonWinnerTeamOne.Location = new System.Drawing.Point(7, 32);
+            this.radioButtonWinnerTeamOne.Name = "radioButtonWinnerTeamOne";
+            this.radioButtonWinnerTeamOne.Size = new System.Drawing.Size(85, 17);
+            this.radioButtonWinnerTeamOne.TabIndex = 4;
+            this.radioButtonWinnerTeamOne.TabStop = true;
+            this.radioButtonWinnerTeamOne.Text = "radioButton1";
+            this.radioButtonWinnerTeamOne.UseVisualStyleBackColor = true;
             // 
-            // checkBoxWinnerTeamTwo
+            // radioButtonWinnerTeamTwo
             // 
-            this.checkBoxWinnerTeamTwo.AutoSize = true;
-            this.checkBoxWinnerTeamTwo.Location = new System.Drawing.Point(109, 64);
-            this.checkBoxWinnerTeamTwo.Name = "checkBoxWinnerTeamTwo";
-            this.checkBoxWinnerTeamTwo.Size = new System.Drawing.Size(80, 17);
-            this.checkBoxWinnerTeamTwo.TabIndex = 3;
-            this.checkBoxWinnerTeamTwo.Text = "checkBox2";
-            this.checkBoxWinnerTeamTwo.UseVisualStyleBackColor = true;
-            this.checkBoxWinnerTeamTwo.CheckedChanged += new System.EventHandler(this.checkBoxWinnerTeamTwo_CheckedChanged);
+            this.radioButtonWinnerTeamTwo.AutoSize = true;
+            this.radioButtonWinnerTeamTwo.Location = new System.Drawing.Point(109, 32);
+            this.radioButtonWinnerTeamTwo.Name = "radioButtonWinnerTeamTwo";
+            this.radioButtonWinnerTeamTwo.Size = new System.Drawing.Size(85, 17);
+            this.radioButtonWinnerTeamTwo.TabIndex = 5;
+            this.radioButtonWinnerTeamTwo.TabStop = true;
+            this.radioButtonWinnerTeamTwo.Text = "radioButton1";
+            this.radioButtonWinnerTeamTwo.UseVisualStyleBackColor = true;
             // 
             // MainForm
             // 
@@ -312,8 +312,8 @@
         private System.Windows.Forms.GroupBox choseTeamGroupBox;
         private System.Windows.Forms.Button saveButton;
         private System.Windows.Forms.Button buttonPayOut;
-        private System.Windows.Forms.CheckBox checkBoxWinnerTeamTwo;
-        private System.Windows.Forms.CheckBox checkBoxWinnerTeamOne;
+        private System.Windows.Forms.RadioButton radioButtonWinnerTeamTwo;
+        private System.Windows.Forms.RadioButton radioButtonWinnerTeamOne;
     }
 }
 

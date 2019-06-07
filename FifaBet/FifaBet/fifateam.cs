@@ -24,7 +24,7 @@ namespace FifaBet
 
         public override string ToString()
         {
-            return string.Format("{0}, {1}, {2} , {3}", home, away, homescore, awayscore);  
+            return string.Format("{0}, {1}", home, away);  
 
         }
 
