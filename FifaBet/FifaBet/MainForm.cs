@@ -278,13 +278,16 @@ namespace FifaBet
 
         private void buttonPayOut_Click(object sender, EventArgs e)
         {
+            //betaald de geld door de payout methode te gebruiken.
             payOut();
-
+            //zet de group box weer terug aan.
             choseTeamGroupBox.Enabled = true;
+            // verwijder de radiobutten en reset het weer.
             radioButtonWinnerTeamOne.Checked = false;
             radioButtonWinnerTeamTwo.Checked = false;
-
+            // zet de rightscore weer aan
             groupBoxRightScore.Enabled = true;
+            //zet de numeric value weer op 0.
             numericUpDownHomeTeam.Value = 0;
             numericUpDownAwayTeam.Value = 0;
         }
@@ -293,76 +296,82 @@ namespace FifaBet
         {
             foreach (fifateam team in teams)
             {
+                // vul in wie er gewonnen heeft.
                 string winningTeam = "";
+                // het check wie er gewonnen heeft.
                 bool teamA = nameTeamOne == team.home;
                 bool teamB = nameTeamTwo == team.away;
 
-
+                // check of de awayscore hoger zijn dan de home score
                 if (team.awayscore > team.homescore)
                 {
-                    winningTeam = team.away;
+                    winningTeam = team.away; // als het waar is voer die deze code uit
                 }
-                else if (team.awayscore < team.homescore)
+                else if (team.awayscore < team.homescore) // check of de awayescore lager is dan de homescore
                 {
-                    winningTeam = team.home;
+                    winningTeam = team.home; // als het waar is voer die deze code uit.
                 }
                 if ((teamA && teamB))
                 {
-                    if (winningTeam == nameTeamOne)
+                    if (winningTeam == nameTeamOne) // hier check die home team
                     {
-                        MessageBox.Show(winningTeam + " heeft gewonnen");
+                        MessageBox.Show(winningTeam + " heeft gewonnen"); // als je gewonnen heb krijg je msb
 
                         if (team.awayscore == numericUpDownAwayTeam.Value && team.homescore == numericUpDownHomeTeam.Value)
                         {
+                            // als je de numric goed heb krijg je 3x uitbetaald
                             creditsBet *= 3;
                             balance += creditsBet;
                             UpdateBalanceLabel();
-                            buttonPayOut.Enabled = false;
+                            buttonPayOut.Enabled = false; // hier zet die de uitbutten uit
                             return;
                         }
                         else if (radioButtonWinnerTeamOne.Checked)
                         {
+                            //als je de knop goed heb voer die deze code uit 
                             creditsBet *= 2;
                             balance += creditsBet;
                             UpdateBalanceLabel();
-                            buttonPayOut.Enabled = false;
+                            buttonPayOut.Enabled = false; // hier zet die de uitbutten uit
                         }
                         else
                         {
-                            MessageBox.Show("Je hebt verloren!");
+                            MessageBox.Show("Je hebt verloren!"); // als je verloren heb krijg je deze melding.
                         }
 
                     }
                
-                    else if (winningTeam == nameTeamTwo)
+                    else if (winningTeam == nameTeamTwo) // hier check die away team
                     {
-                        MessageBox.Show(winningTeam + " heeft gewonnen");
+                        MessageBox.Show(winningTeam + " heeft gewonnen"); // als je gewonnen heb krijg je msb
 
                         if (team.awayscore == numericUpDownAwayTeam.Value && team.homescore == numericUpDownHomeTeam.Value)
                         {
+                            // als je de numric goed heb krijg je 3x uitbetaald
                             creditsBet *= 3;
                             balance += creditsBet;
                             UpdateBalanceLabel();
-                            buttonPayOut.Enabled = false;
+                            buttonPayOut.Enabled = false;// hier zet die de uitbutten uit
                             return;
                         }
                         else if (radioButtonWinnerTeamTwo.Checked)
                         {
+                            //als je de knop goed heb voer die deze code uit 
                             creditsBet *= 2;
                             balance += creditsBet;
                             UpdateBalanceLabel();
-                            buttonPayOut.Enabled = false;
+                            buttonPayOut.Enabled = false;// hier zet die de uitbutten uit
                         }
                         else
                         {
-                            MessageBox.Show("Je hebt verloren!");
+                            MessageBox.Show("Je hebt verloren!"); // als je verloren heb krijg je deze melding
                         }
                     }
 
 
                     else if (team.awayscore != numericUpDownAwayTeam.Value && team.homescore != numericUpDownHomeTeam.Value)
                     {
-                        MessageBox.Show("Je hebt niet de juiste score ingevuld");
+                        MessageBox.Show("Je hebt niet de juiste score ingevuld"); // als je de juiste score niet heb ingevuld
                         return;
                     }
                     return;
