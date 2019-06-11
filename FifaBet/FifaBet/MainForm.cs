@@ -65,7 +65,7 @@ namespace FifaBet
             {
                 // api link
 
-                fifaJson = downloader.DownloadString("http://localhost/Proj_fifa/PHP/PHP/api.php/?key=hardcodedkey1234");
+                fifaJson = downloader.DownloadString("http://batinsimsek.nl/api.php?key=hardcodedkey1234");
 
                 teams = JsonConvert.DeserializeObject<List<fifateam>>(fifaJson);
                 // zet de team in een comebox met buhulp van een list
